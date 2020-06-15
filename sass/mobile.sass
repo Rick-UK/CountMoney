@@ -7,7 +7,7 @@
   height: 32px
   padding: 0 10px 0 10px
   display: flex
-  
+  border-bottom: 1px solid $bgMobileInpit
 
   &__title
     margin: 0 0
@@ -17,4 +17,149 @@
     font-family: 'Times New Roman', Times, serif
     margin: auto
     
+.main
+
+  &__title
+    margin: 10px auto 10px auto
+    text-align: center
+    font-size: 24px
+    line-height: 24px
     
+.enter-form
+  width: 300px
+  margin: 0 auto 10px auto
+  //background: #7add7a
+  display: flex
+  flex-direction: column
+  align-items: center
+
+
+  &__login-label,
+  &__password-label
+    padding-top: 5px
+    padding-bottom: 5px
+    padding-left: 30px
+    align-self: flex-start
+    
+  &__login-input,
+  &__password-input 
+    width: 250px  
+    height: 30px
+    border: 2px solid $bgMobileInpit
+    border-radius: 5px
+    padding: 0 4px 0 4px
+    font-size: 16px
+
+  &__login-input:hover,
+  &__password-input:hover  
+    border: 2px solid #cccccc 
+    background-color: $bgMobile 
+    padding: 0 4px 0 4px;
+
+  &__login-input:focus,
+  &__password-input:focus  
+    outline: none
+    border: 2px solid #cccccc  
+    padding: 0 4px 0 4px;
+
+  &__login-input::placeholder,
+  &__password-input::placeholder 
+    color: $mainFontColor
+    font-family: $mainFont
+    font-size: 16px
+    line-height: 16px 
+
+  &__error
+    font-size: 16px  
+    line-height: 16px
+    color: $errorFontColor
+    text-align: center
+    margin-top: 5px
+    margin-bottom: 10px
+    
+  &__enter,
+  &__registration
+    height: 40px
+    min-width: 120px
+    border: 1px solid $mainFontColor
+    border-radius: 10px
+    font-size: $mainFontSize
+    line-height: $mainFontSize
+    color: $mainFontColor
+    font-weight: 700
+    margin-top: 5px
+    margin-bottom: 5px
+    padding: 0 20px 0 20px
+    cursor: pointer
+    background-color: $bgMobileInpit
+    
+  &__enter:hover,
+  &__registration:hover
+    background-color: #e6e6e6
+
+
+  &__enter:focus,
+  &__registration:focus
+    background-color: #cccccc
+    outline: none
+
+.rules  
+  width: 300px
+  margin: 0 auto 10px auto
+  padding: 0 5px 0 5px
+
+  &__title
+    margin: 10px auto 10px auto
+    text-align: center
+    font-size: 24px
+    line-height: 24px
+  
+  &__item
+    list-style: none
+    font-size: 16px  
+    line-height: 16px
+    padding-bottom: 5px
+
+
+
+.menu  
+  display: flex
+  &__wrap
+    position: sticky
+    left: 0
+    bottom: 0
+
+  &__link-wrap
+    list-style: none
+    flex-grow: 1
+
+  &__link-wrap:last-child .menu__link
+    border-right: 1px solid #1a1a1a
+
+  &__link
+    display: block
+    text-align: center
+    text-decoration: none
+    height: 35px
+    min-width: 80px
+    font-size: 16px  
+    font-weight: 700
+    color: $mainFontColor
+    line-height: 33px
+    border-top: 1px solid #1a1a1a
+    border-bottom: 1px solid #1a1a1a
+    border-left: 1px solid #1a1a1a
+    border-radius: 5px
+    background-color: $bgMobile
+
+  &__link:hover
+    background-color: #e6e6e6
+
+  &__link:active
+    background-color: #cccccc
+
+    
+
+
+
+
