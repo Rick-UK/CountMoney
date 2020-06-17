@@ -177,3 +177,6 @@ body {
     outline: none; }
   .menu__link:active {
     background-color: #b3b3b3; }
+
+.lorem {
+  color: red; }
