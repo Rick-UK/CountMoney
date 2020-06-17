@@ -7,7 +7,7 @@
   height: 32px
   padding: 0 10px 0 10px
   display: flex
-  border-bottom: 1px solid $bgMobileInpit
+  border-bottom: 1px solid $alternativeBGColor
 
   &__title
     margin: 0 0
@@ -28,7 +28,6 @@
 .enter-form
   width: 300px
   margin: 0 auto 10px auto
-  //background: #7add7a
   display: flex
   flex-direction: column
   align-items: center
@@ -45,21 +44,26 @@
   &__password-input 
     width: 250px  
     height: 30px
-    border: 2px solid $bgMobileInpit
+    border: 2px solid $alternativeBGColor
     border-radius: 5px
     padding: 0 4px 0 4px
     font-size: 16px
 
   &__login-input:hover,
   &__password-input:hover  
-    border: 2px solid #cccccc 
-    background-color: $bgMobile 
+    border: 2px solid $hoverColor
     padding: 0 4px 0 4px;
 
   &__login-input:focus,
   &__password-input:focus  
     outline: none
-    border: 2px solid #cccccc  
+    border: 2px solid $focusColor  
+    padding: 0 4px 0 4px;
+
+  &__login-input:active,
+  &__password-input:active  
+    outline: none
+    border: 2px solid $activeColor  
     padding: 0 4px 0 4px;
 
   &__login-input::placeholder,
@@ -81,7 +85,7 @@
   &__registration
     height: 40px
     min-width: 120px
-    border: 1px solid $mainFontColor
+    border: 1px solid $buttonBorderColor
     border-radius: 10px
     font-size: $mainFontSize
     line-height: $mainFontSize
@@ -91,17 +95,22 @@
     margin-bottom: 5px
     padding: 0 20px 0 20px
     cursor: pointer
-    background-color: $bgMobileInpit
+    background-color: $buttonColor
     
   &__enter:hover,
   &__registration:hover
-    background-color: #e6e6e6
+    background-color: $hoverColor
 
 
   &__enter:focus,
   &__registration:focus
-    background-color: #cccccc
+    background-color: $focusColor
     outline: none
+
+  &__enter:active,
+  &__registration:active
+    background-color: $activeColor 
+
 
 .rules  
   width: 300px
@@ -134,7 +143,7 @@
     flex-grow: 1
 
   &__link-wrap:last-child .menu__link
-    border-right: 1px solid #1a1a1a
+    border-right: 1px solid $buttonBorderColor
 
   &__link
     display: block
@@ -146,17 +155,21 @@
     font-weight: 700
     color: $mainFontColor
     line-height: 33px
-    border-top: 1px solid #1a1a1a
-    border-bottom: 1px solid #1a1a1a
-    border-left: 1px solid #1a1a1a
+    border-top: 1px solid $buttonBorderColor
+    border-bottom: 1px solid $buttonBorderColor
+    border-left: 1px solid $buttonBorderColor
     border-radius: 5px
-    background-color: $bgMobile
+    background-color: $buttonColor
 
   &__link:hover
-    background-color: #e6e6e6
+    background-color: $hoverColor
+
+  &__link:focus
+    background-color: $focusColor 
+    outline: none
 
   &__link:active
-    background-color: #cccccc
+    background-color: $activeColor
 
     
 

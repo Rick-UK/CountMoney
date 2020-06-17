@@ -66,11 +66,14 @@ body {
     font-size: 16px; }
   .enter-form__login-input:hover, .enter-form__password-input:hover {
     border: 2px solid #cccccc;
-    background-color: #ffffff;
     padding: 0 4px 0 4px; }
   .enter-form__login-input:focus, .enter-form__password-input:focus {
     outline: none;
     border: 2px solid #cccccc;
+    padding: 0 4px 0 4px; }
+  .enter-form__login-input:active, .enter-form__password-input:active {
+    outline: none;
+    border: 2px solid #b3b3b3;
     padding: 0 4px 0 4px; }
   .enter-form__login-input::-webkit-input-placeholder, .enter-form__password-input::-webkit-input-placeholder {
     color: #1a1a1a;
@@ -112,12 +115,14 @@ body {
     margin-bottom: 5px;
     padding: 0 20px 0 20px;
     cursor: pointer;
-    background-color: #e6e6e6; }
+    background-color: #ffffff; }
   .enter-form__enter:hover, .enter-form__registration:hover {
-    background-color: #e6e6e6; }
+    background-color: #cccccc; }
   .enter-form__enter:focus, .enter-form__registration:focus {
     background-color: #cccccc;
     outline: none; }
+  .enter-form__enter:active, .enter-form__registration:active {
+    background-color: #b3b3b3; }
 
 .rules {
   width: 300px;
@@ -166,6 +171,9 @@ body {
     border-radius: 5px;
     background-color: #ffffff; }
   .menu__link:hover {
-    background-color: #e6e6e6; }
-  .menu__link:active {
     background-color: #cccccc; }
+  .menu__link:focus {
+    background-color: #cccccc;
+    outline: none; }
+  .menu__link:active {
+    background-color: #b3b3b3; }
