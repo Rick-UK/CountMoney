@@ -11,10 +11,10 @@
 
   &__title
     margin: 0 0
-    font-size: 24px
-    line-height: 24px
+    font-size: $h1
+    line-height: $h1
     display: inline
-    font-family: 'Times New Roman', Times, serif
+    font-family: $h1Font
     margin: auto
     
 .main
@@ -22,8 +22,8 @@
   &__title
     margin: 10px auto 10px auto
     text-align: center
-    font-size: 24px
-    line-height: 24px
+    font-size: $h2
+    line-height: $h2
     
 .enter-form
   width: 300px
@@ -47,7 +47,7 @@
     border: 2px solid $alternativeBGColor
     border-radius: 5px
     padding: 0 4px 0 4px
-    font-size: 16px
+    font-size: $smallFontSize
 
   &__login-input:hover,
   &__password-input:hover  
@@ -70,12 +70,12 @@
   &__password-input::placeholder 
     color: $mainFontColor
     font-family: $mainFont
-    font-size: 16px
-    line-height: 16px 
+    font-size: $smallFontSize
+    line-height: $smallFontSize
 
   &__error
-    font-size: 16px  
-    line-height: 16px
+    font-size: $smallFontSize  
+    line-height: $smallFontSize
     color: $errorFontColor
     text-align: center
     margin-top: 5px
@@ -87,8 +87,8 @@
     min-width: 120px
     border: 1px solid $buttonBorderColor
     border-radius: 10px
-    font-size: $mainFontSize
-    line-height: $mainFontSize
+    font-size: $btnFontSize
+    line-height: $btnFontSize
     color: $mainFontColor
     font-weight: 700
     margin-top: 5px
@@ -120,13 +120,13 @@
   &__title
     margin: 10px auto 10px auto
     text-align: center
-    font-size: 24px
-    line-height: 24px
+    font-size: $h2
+    line-height: $h2
   
   &__item
     list-style: none
-    font-size: 16px  
-    line-height: 16px
+    font-size: $smallFontSize  
+    line-height: $smallFontSize
     padding-bottom: 5px
 
 
@@ -151,7 +151,7 @@
     text-decoration: none
     height: 35px
     min-width: 80px
-    font-size: 16px  
+    font-size: $btnSmallFontSize 
     font-weight: 700
     color: $mainFontColor
     line-height: 33px
