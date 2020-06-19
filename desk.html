@@ -5,7 +5,7 @@
         <title>Count Money</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link type="text/css" rel="stylesheet" href="css/style.css">   
-
+        <script src="js/main.js" async></script>
     </head>
     <body>
         <div class="wrap">
@@ -14,6 +14,31 @@
                 <h1 class="header__title">Главная: User123</h1>
             </header>
             <main class="main">
+                <form class="date-interval" action="doInterval" method="POST" name="date-interval">
+
+                    <div class="date-interval__time-wrap">
+                        <label class="date-interval__label date-interval__fromTime-label" for="date-interval__fromTime-input">С</label>
+                        <div class="date-interval__input_wrap">
+                            <input class="date-interval__input" id="date-interval__fromTime-input" type="date">
+                        </div>
+                        <div class="date-interval__display date-interval__fromTime-display" >00.00.00</div>
+                    </div>
+                        
+                    <div class="date-interval__time-wrap">
+                        <label class="date-interval__label date-interval__toTime-label" for="date-interval__toTime-input">По</label>
+                        <div class="date-interval__input_wrap date-interval__input_wrap-position">
+                            <input class="date-interval__input" id="date-interval__toTime-input" type="date">
+                        </div>
+                        <div class="date-interval__display date-interval__toTime-display" >00.00.00</div>
+                    </div>
+                        
+                    <button class="date-interval__btn" name="interval">OK</button>
+                    
+                    
+
+                </form>
+                <p class="date-interval__error">Неверно указанный интервал</p>
+
                 <p class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde soluta blanditiis amet error, architecto optio voluptas culpa iure, dicta deserunt nisi fuga facere quasi perspiciatis aliquid porro reprehenderit, rem nemo!</p>
 
                 <nav class="menu__wrap">
@@ -29,6 +54,6 @@
 
         </div>
         
-
+        
     </body>
 </html>
