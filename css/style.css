@@ -260,3 +260,41 @@ body {
     margin-top: 5px;
     margin-bottom: 5px;
     display: none; }
+
+.blocks {
+  width: 300px;
+  padding: 5px 0;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.square-block {
+  width: 145px;
+  padding: 5px;
+  background-color: #e6e6e6;
+  border-radius: 10px; }
+  .square-block__title {
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 700;
+    margin-bottom: 5px; }
+  .square-block__result {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end; }
+  .square-block__currency {
+    font-size: 18px;
+    line-height: 18px; }
+  .square-block__total {
+    font-size: 24px;
+    line-height: 24px; }
