@@ -37,7 +37,7 @@
                 </form>
                 <p class="date-interval__error">Неверно указанный интервал</p>
 
-                <section class="blocks">
+                <section class="budget">
                     <div class="square-block">
                         <h3 class="square-block__title">Расход</h3>
                         <div class="square-block__result">
@@ -75,9 +75,199 @@
                         </div>
 
                     </div>
+
+                    <div class="square-block">
+                        <h3 class="square-block__title">Сальдо</h3>
+                        <div class="square-block__result">
+                            <div class="square-block__currency">&#8381;</div>
+                            <div class="square-block__total">40 395</div>
+                        </div>
+
+                        <div class="square-block__result">
+                            <div class="square-block__currency">&#36;</div>
+                            <div class="square-block__total">-2 542</div>
+                        </div>
+
+                        <div class="square-block__result">
+                            <div class="square-block__currency">&euro;</div>
+                            <div class="square-block__total">40 395</div>
+                        </div>
+
+                    </div>
+
+                    <div class="square-block">
+                        <h3 class="square-block__title">Накопления</h3>
+                        <div class="square-block__result">
+                            <div class="square-block__currency">&#8381;</div>
+                            <div class="square-block__total">40 395</div>
+                        </div>
+
+                        <div class="square-block__result">
+                            <div class="square-block__currency">&#36;</div>
+                            <div class="square-block__total">40 395</div>
+                        </div>
+
+                        <div class="square-block__result">
+                            <div class="square-block__currency">&euro;</div>
+                            <div class="square-block__total">40 395</div>
+                        </div>
+
+                    </div>
+
                 </section>
 
+                <section class="accumulation">
+                    <h2 class="accumulation__title">Категории накомлений</h2>
 
+                    <div class="accumulation__blocks"> 
+
+                        <div class="square-block">
+                            <h3 class="square-block__title">Здоровье</h3>
+                            <div class="square-block__result">
+                                <div class="square-block__currency">&#8381;</div>
+                                <div class="square-block__total">40 395</div>
+                            </div>
+    
+                            <div class="square-block__result">
+                                <div class="square-block__currency">&#36;</div>
+                                <div class="square-block__total">40 395</div>
+                            </div>
+    
+                            <div class="square-block__result">
+                                <div class="square-block__currency">&euro;</div>
+                                <div class="square-block__total">40 395</div>
+                            </div>
+    
+                        </div>
+    
+                        <div class="square-block">
+                            <h3 class="square-block__title">Учеба</h3>
+                            <div class="square-block__result">
+                                <div class="square-block__currency">&#8381;</div>
+                                <div class="square-block__total">40 395</div>
+                            </div>
+    
+                            <div class="square-block__result">
+                                <div class="square-block__currency">&#36;</div>
+                                <div class="square-block__total">40 395</div>
+                            </div>
+    
+                            <div class="square-block__result">
+                                <div class="square-block__currency">&euro;</div>
+                                <div class="square-block__total">40 395</div>
+                            </div>
+    
+                        </div>
+    
+                        <div class="square-block">
+                            <h3 class="square-block__title">Большие траты</h3>
+                            <div class="square-block__result">
+                                <div class="square-block__currency">&#8381;</div>
+                                <div class="square-block__total">40 395</div>
+                            </div>
+    
+                            <div class="square-block__result">
+                                <div class="square-block__currency">&#36;</div>
+                                <div class="square-block__total">-2 542</div>
+                            </div>
+    
+                            <div class="square-block__result">
+                                <div class="square-block__currency">&euro;</div>
+                                <div class="square-block__total">40 395</div>
+                            </div>
+    
+                        </div>
+    
+                        <div class="square-block">
+                            <h3 class="square-block__title">Подушка</h3>
+                            <div class="square-block__result">
+                                <div class="square-block__currency">&#8381;</div>
+                                <div class="square-block__total">40 395</div>
+                            </div>
+    
+                            <div class="square-block__result">
+                                <div class="square-block__currency">&#36;</div>
+                                <div class="square-block__total">40 395</div>
+                            </div>
+    
+                            <div class="square-block__result">
+                                <div class="square-block__currency">&euro;</div>
+                                <div class="square-block__total">40 395</div>
+                            </div>
+    
+                        </div>
+    
+                        <div class="square-block">
+                            <h3 class="square-block__title">Капитал</h3>
+                            <div class="square-block__result">
+                                <div class="square-block__currency">&#8381;</div>
+                                <div class="square-block__total">40 395</div>
+                            </div>
+    
+                            <div class="square-block__result">
+                                <div class="square-block__currency">&#36;</div>
+                                <div class="square-block__total">40 395</div>
+                            </div>
+    
+                            <div class="square-block__result">
+                                <div class="square-block__currency">&euro;</div>
+                                <div class="square-block__total">40 395</div>
+                            </div>
+    
+                        </div>
+
+                        <div class="accumulation__add-category">
+                            <h3 class="accumulation__category-title">Добавить категорию</h3>
+                            <form class="accumulation__form" action="add-category" method="POST" name="add-category">
+                                <input class="accumulation__input" type="text" placeholder="Название категории">
+                                <button class="accumulation__button" type="button">Ok</button>
+                            </form>
+                        </div>
+
+                        <div class="settings">
+                            <h2 class="settings__title">Добавить категорию</h3>
+                            <form class="settings__form" action="settings" method="POST" name="settings">
+                                <div class="settings__currencies">
+                                    <h3 class="settings__item-title">Валюты:</h3>
+                                    <div class="settings__checkbox-wrap">
+                                        <label class="settings__label" for="settings__checkbox-rub">
+                                            <span class="settings__label-title">&#8381;</span>
+                                            <input class="settings__checkbox" type="checkbox" id="settings__checkbox-rub" name="RUB" value="RUB">
+                                            <span class="settings__box"></span>
+                                        </label>
+                                            
+                                        <label class="settings__label" for="settings__checkbox-usd">
+                                            <span class="settings__label-title">&#36;</span>
+                                            <input class="settings__checkbox" type="checkbox" id="settings__checkbox-usd" name="USD" value="USD">
+                                            <span class="settings__box"></span>
+                                        </label>
+                                        
+                                        <label class="settings__label" for="settings__checkbox-eur">
+                                            <span class="settings__label-title">&euro;</span>
+                                            <input class="settings__checkbox" type="checkbox" id="settings__checkbox-eur" name="EUR" value="EUR">
+                                            <span class="settings__box"></span>
+                                        </label>
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="settings__accumulation">
+                    
+                                    <label class="settings__label" for="settings__checkbox-accumulation">
+                                        <span class="settings__item-title">Вкл. Категории накоплений:</span>
+                                        <input class="settings__checkbox" type="checkbox" id="settings__checkbox-accumulation" name="accumulation" value="accumulation">
+                                        <span class="settings__box"></span>
+                                    </label>
+                                    
+                                </div>
+
+                                <button class="accumulation__button" type="button">OK</button>
+                            </form>
+                        </div>
+
+                    </div>
+                    
+                </section>
 
 
                 <nav class="menu__wrap">

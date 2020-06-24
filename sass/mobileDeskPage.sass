@@ -85,18 +85,19 @@
     margin-bottom: 5px
     display: none
 
-.blocks
+.budget
   width: 300px
-  padding: 5px 0
+  padding: 5px 0 0 0
   margin: 0 auto
-  //background: #8ce6a4
   display: flex
   justify-content: space-between
+  flex-wrap: wrap
 
 .square-block
   width: 145px 
   //border: 1px solid $buttonBorderColor
   padding: 5px
+  margin-bottom: 10px
   background-color: $blockColor
   border-radius: 10px
 
@@ -118,3 +119,180 @@
   &__total    
     font-size: $fontSizeForTotal
     line-height: $fontSizeForTotal
+
+.accumulation
+  width: 300px
+  margin: 5px auto
+
+  &__title
+    font-size: $h2
+    line-height: $h2
+    font-weight: 400
+    text-align: center
+    margin: 5px 0  
+
+  &__blocks
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+
+  &__add-category
+    width: 300px  
+    padding: 5px
+    margin-bottom: 10px
+    background-color: $blockColor
+    border-radius: 10px
+
+  &__category-title  
+    font-size: $h3
+    line-height: $h3
+    font-weight: 700
+    margin-bottom: 5px
+
+  &__input
+    width: 235px  
+    height: 30px
+    border: 2px solid $hoverColor
+    border-radius: 5px
+    padding: 0 4px 0 4px
+    font-size: $smallFontSize  
+
+  &__input:hover  
+    border: 2px solid $activeColor
+    padding: 0 4px 0 4px;
+
+  &__input:focus  
+    outline: none
+    border: 2px solid $activeColor  
+    padding: 0 4px 0 4px;
+
+  &__input:active  
+    outline: none
+    border: 2px solid $bgMobile  
+    padding: 0 4px 0 4px;
+
+  &__input::placeholder 
+    color: $mainFontColor
+    font-family: $mainFont
+    font-size: $smallFontSize
+    line-height: $smallFontSize
+
+  &__button  
+    width: 50px
+    height: 30px
+    border: 1px solid $buttonBorderColor
+    border-radius: 5px
+    font-size: $btnFontSize
+    line-height: $btnFontSize
+    color: $mainFontColor
+    font-weight: 400
+    padding: 0 5px 0 5px
+    cursor: pointer
+    background-color: $buttonColor
+
+  &__button:hover
+    background-color: $hoverColor
+
+
+  &__button:focus
+    background-color: $focusColor
+    outline: none
+
+  &__button:active
+    background-color: $activeColor 
+
+.settings
+  width: 300px
+  margin: 5px auto  
+
+  &__title
+    font-size: $h2
+    line-height: $h2
+    font-weight: 400
+    text-align: center
+    margin: 0 0 5px 0
+
+  &__form
+    width: 300px  
+    padding: 5px
+    margin-bottom: 5px
+    background-color: $blockColor
+    border-radius: 10px  
+    display: flex
+    flex-direction: column
+    align-items: center
+
+  &__currencies
+    display: flex
+    justify-content: space-between
+    align-items: center  
+    margin-bottom: 5px
+    width: 290px
+
+  &__item-title
+    font-size: $h3
+    line-height: $h3
+    font-weight: 400
+
+  &__label 
+    font-size: $h3
+    line-height: $h3
+    font-weight: 400  
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+  &__label-title
+    margin: 0 5px 0 5px
+
+  &__checkbox-wrap
+    display: flex
+    justify-content: space-between
+    align-items: center  
+
+  &__checkbox
+    position: absolute
+    width: 1px
+    height: 1px
+    overflow: hidden
+    clip: rect(0 0 0 0)
+
+  &__checkbox:checked + .settings__box
+    border: 2px solid $activeColor
+    background: $bgMobile
+    background-image: url("../img/checkmark.svg")
+
+  &__checkbox:focus + .settings__box
+    border: 2px solid $activeColor
+    background-color: $blockColor
+
+  &__checkbox:hover + .settings__box
+    border: 2px solid $activeColor  
+    background-color: $blockColor
+
+  &__checkbox:disabled + .settings__box
+    background-color: $hoverColor
+    border: 2px solid $hoverColor
+
+  &__checkbox:disabled:checked + .settings__box
+    background-color: $hoverColor
+    background-image: url("../img/checkmarkDisabled.svg")         
+
+  &__box
+    width: 30px
+    height: 30px   
+    display: inline-block
+    border: 2px solid $hoverColor
+    border-radius: 5px
+    background: $bgMobile
+
+  &__accumulation
+    margin-bottom: 5px
+    width: 290px
+
+       
+
+
+
+
+

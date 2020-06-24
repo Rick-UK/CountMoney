@@ -261,20 +261,23 @@ body {
     margin-bottom: 5px;
     display: none; }
 
-.blocks {
+.budget {
   width: 300px;
-  padding: 5px 0;
+  padding: 5px 0 0 0;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-  justify-content: space-between; }
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
 
 .square-block {
   width: 145px;
   padding: 5px;
+  margin-bottom: 10px;
   background-color: #e6e6e6;
   border-radius: 10px; }
   .square-block__title {
@@ -298,3 +301,189 @@ body {
   .square-block__total {
     font-size: 24px;
     line-height: 24px; }
+
+.accumulation {
+  width: 300px;
+  margin: 5px auto; }
+  .accumulation__title {
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 400;
+    text-align: center;
+    margin: 5px 0; }
+  .accumulation__blocks {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+  .accumulation__add-category {
+    width: 300px;
+    padding: 5px;
+    margin-bottom: 10px;
+    background-color: #e6e6e6;
+    border-radius: 10px; }
+  .accumulation__category-title {
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 700;
+    margin-bottom: 5px; }
+  .accumulation__input {
+    width: 235px;
+    height: 30px;
+    border: 2px solid #cccccc;
+    border-radius: 5px;
+    padding: 0 4px 0 4px;
+    font-size: 16px; }
+  .accumulation__input:hover {
+    border: 2px solid #b3b3b3;
+    padding: 0 4px 0 4px; }
+  .accumulation__input:focus {
+    outline: none;
+    border: 2px solid #b3b3b3;
+    padding: 0 4px 0 4px; }
+  .accumulation__input:active {
+    outline: none;
+    border: 2px solid #ffffff;
+    padding: 0 4px 0 4px; }
+  .accumulation__input::-webkit-input-placeholder {
+    color: #1a1a1a;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-size: 16px;
+    line-height: 16px; }
+  .accumulation__input:-ms-input-placeholder {
+    color: #1a1a1a;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-size: 16px;
+    line-height: 16px; }
+  .accumulation__input::-ms-input-placeholder {
+    color: #1a1a1a;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-size: 16px;
+    line-height: 16px; }
+  .accumulation__input::placeholder {
+    color: #1a1a1a;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-size: 16px;
+    line-height: 16px; }
+  .accumulation__button {
+    width: 50px;
+    height: 30px;
+    border: 1px solid #1a1a1a;
+    border-radius: 5px;
+    font-size: 18px;
+    line-height: 18px;
+    color: #1a1a1a;
+    font-weight: 400;
+    padding: 0 5px 0 5px;
+    cursor: pointer;
+    background-color: #ffffff; }
+  .accumulation__button:hover {
+    background-color: #cccccc; }
+  .accumulation__button:focus {
+    background-color: #cccccc;
+    outline: none; }
+  .accumulation__button:active {
+    background-color: #b3b3b3; }
+
+.settings {
+  width: 300px;
+  margin: 5px auto; }
+  .settings__title {
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 5px 0; }
+  .settings__form {
+    width: 300px;
+    padding: 5px;
+    margin-bottom: 5px;
+    background-color: #e6e6e6;
+    border-radius: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  .settings__currencies {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 5px;
+    width: 290px; }
+  .settings__item-title {
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 400; }
+  .settings__label {
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 400;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  .settings__label-title {
+    margin: 0 5px 0 5px; }
+  .settings__checkbox-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  .settings__checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0); }
+  .settings__checkbox:checked + .settings__box {
+    border: 2px solid #b3b3b3;
+    background: #ffffff;
+    background-image: url("../img/checkmark.svg"); }
+  .settings__checkbox:focus + .settings__box {
+    border: 2px solid #b3b3b3;
+    background-color: #e6e6e6; }
+  .settings__checkbox:hover + .settings__box {
+    border: 2px solid #b3b3b3;
+    background-color: #e6e6e6; }
+  .settings__checkbox:disabled + .settings__box {
+    background-color: #cccccc;
+    border: 2px solid #cccccc; }
+  .settings__checkbox:disabled:checked + .settings__box {
+    background-color: #cccccc;
+    background-image: url("../img/checkmarkDisabled.svg"); }
+  .settings__box {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    border: 2px solid #cccccc;
+    border-radius: 5px;
+    background: #ffffff; }
+  .settings__accumulation {
+    margin-bottom: 5px;
+    width: 290px; }
