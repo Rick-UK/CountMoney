@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Count Money</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link type="text/css" rel="stylesheet" href="css/style.css">   
+        <script src="js/main.js" async></script>
+    </head>
+    <body>
+        <div class="wrap">
+            <header class="header">
+                <img class="header__logo" src="img/logo.svg" alt="Logo" height="32px" width="32px">
+                <h1 class="header__title">Расходы: User123</h1>
+            </header>
+            <main class="main">
+                <form class="date-interval" action="doInterval" method="POST" name="date-interval">
+
+                    <div class="date-interval__time-wrap">
+                        <label class="date-interval__label date-interval__fromTime-label" for="date-interval__fromTime-input">С</label>
+                        <div class="date-interval__input_wrap">
+                            <input class="date-interval__input" id="date-interval__fromTime-input" type="date">
+                        </div>
+                        <div class="date-interval__display date-interval__fromTime-display" >00.00.00</div>
+                    </div>
+                        
+                    <div class="date-interval__time-wrap">
+                        <label class="date-interval__label date-interval__toTime-label" for="date-interval__toTime-input">По</label>
+                        <div class="date-interval__input_wrap date-interval__input_wrap-position">
+                            <input class="date-interval__input" id="date-interval__toTime-input" type="date">
+                        </div>
+                        <div class="date-interval__display date-interval__toTime-display" >00.00.00</div>
+                    </div>
+                        
+                    <button class="date-interval__btn" name="interval">OK</button>
+                    
+                </form>
+                <p class="date-interval__error">Неверно указанный интервал</p>
+
+                <section class="expense-table__wrap">
+                    <table class="expense-table">
+                        <thead>
+                            <tr class="expense-table__row-head">
+                                <th class="expense-table__col-head expense-table__col-head_month">Месяц</th>
+                                <th class="expense-table__col-head expense-table__col-head_curren">&curren;</th>
+                                <th class="expense-table__col-head expense-table__col-head_sum">Сумма</th>
+                                <th class="expense-table__col-head expense-table__col-head_comment">Комментарий </th>
+                                <th class="expense-table__col-head expense-table__col-head_del">
+                                    <img class="expense-table__img_del" src="img/delete.svg" alt="del" height="20x" width="20px">
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr class="expense-table__row">
+                                <td class="expense-table__col expense-table__col_month">31.12.20</td>
+                                <td class="expense-table__col">&#8381;</td>
+                                <td class="expense-table__col expense-table__col_sum">40359dasdasds</td>
+                                <td class="expense-table__col expense-table__col_comment">Одежда</td>
+                                <td class="expense-table__col expense-table__col_del">
+                                    <img class="expense-table__img_del" src="img/delete.svg" alt="del" height="20px" width="20px">
+                                </td>
+                            </tr>
+                            <tr class="expense-table__row">
+                                <td class="expense-table__col expense-table__col_month">31.12.20</td>
+                                <td class="expense-table__col">&#8381;</td>
+                                <td class="expense-table__col expense-table__col_sum">40359</td>
+                                <td class="expense-table__col expense-table__col_comment">Одежда</td>
+                                <td class="expense-table__col expense-table__col_del">
+                                    <img class="expense-table__img_del" src="img/delete.svg" alt="del" height="20px" width="20px">
+                                </td>
+                            </tr>
+                            <tr class="expense-table__row">
+                                <td class="expense-table__col expense-table__col_month">31.12.20</td>
+                                <td class="expense-table__col">&#8381;</td>
+                                <td class="expense-table__col expense-table__col_sum">40359</td>
+                                <td class="expense-table__col expense-table__col_comment">Одежда</td>
+                                <td class="expense-table__col expense-table__col_del">
+                                    <img class="expense-table__img_del" src="img/delete.svg" alt="del" height="20px" width="20px">
+                                </td>
+                            </tr>
+                            <tr class="expense-table__row">
+                                <td class="expense-table__col expense-table__col_month">31.12.20</td>
+                                <td class="expense-table__col">&#8381;</td>
+                                <td class="expense-table__col expense-table__col_sum">40359</td>
+                                <td class="expense-table__col expense-table__col_comment">Одежда</td>
+                                <td class="expense-table__col expense-table__col_del">
+                                    <img class="expense-table__img_del" src="img/delete.svg" alt="del" height="20px" width="20px">
+                                </td>
+                            </tr>
+                            <tr class="expense-table__row">
+                                <td class="expense-table__col expense-table__col_month">31.12.20</td>
+                                <td class="expense-table__col">&#8381;</td>
+                                <td class="expense-table__col expense-table__col_sum">40359</td>
+                                <td class="expense-table__col expense-table__col_comment">Одежда</td>
+                                <td class="expense-table__col expense-table__col_del">
+                                    <img class="expense-table__img_del" src="img/delete.svg" alt="del" height="20px" width="20px">
+                                </td>
+                            </tr>
+                            <tr class="expense-table__row">
+                                <td class="expense-table__col expense-table__col_month">31.12.20</td>
+                                <td class="expense-table__col">&#8381;</td>
+                                <td class="expense-table__col expense-table__col_sum">40359</td>
+                                <td class="expense-table__col expense-table__col_comment">Одежда</td>
+                                <td class="expense-table__col expense-table__col_del">
+                                    <img class="expense-table__img_del" src="img/delete.svg" alt="del" height="20px" width="20px">
+                                </td>
+                            </tr>
+                            <tr class="expense-table__row">
+                                <td class="expense-table__col expense-table__col_month">31.12.20</td>
+                                <td class="expense-table__col">&#8381;</td>
+                                <td class="expense-table__col expense-table__col_sum">40359</td>
+                                <td class="expense-table__col expense-table__col_comment">Одежда</td>
+                                <td class="expense-table__col expense-table__col_del">
+                                    <img class="expense-table__img_del" src="img/delete.svg" alt="del" height="20px" width="20px">
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                        <tfoot> 
+                            <tr class="expense-table__row expense-table__row_total">
+                                <td class="expense-table__col ">Итог: </td>
+                                <td class="expense-table__col">&#8381;<br>
+                                    &#36;<br>
+                                    &euro;
+                                </td>
+                                <td class="expense-table__col expense-table__col_sum">40359<br>
+                                    40359<br>
+                                    40359
+                                </td>
+                                <td colspan="2" class="expense-table__col">31.12.20<br>31.12.20</td>
+                                
+                            </tr>
+
+                        </tfoot>
+                        
+                    </table>
+                </section>
+
+
+                <nav class="menu__wrap">
+                    <ul class="menu">
+                        <li class="menu__link-wrap"><a class="menu__link" href="desk.html">Главная</a></li>
+                        <li class="menu__link-wrap"><a class="menu__link" href="expenses.html">Расход</a></li>
+                        <li class="menu__link-wrap"><a class="menu__link" href="#">Доход</a></li>
+                        <li class="menu__link-wrap"><a class="menu__link" href="#">Сальдо</a></li>
+                    </ul>
+                </nav>
+                
+            </main>
+
+        </div>
+        
+        
+    </body>
+</html>

@@ -487,3 +487,63 @@ body {
   .settings__accumulation {
     margin-bottom: 5px;
     width: 290px; }
+
+.expense-table {
+  border: 1px solid red;
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 320px;
+  margin: 5px 0 5px 0; }
+  .expense-table__col-head {
+    font-size: 18px;
+    line-height: 22px;
+    padding: 0 5px 0 5px;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    border: 1px solid #1a1a1a;
+    height: 25px;
+    position: relative; }
+  .expense-table__col-head_month {
+    width: 80px; }
+  .expense-table__col-head_curren {
+    width: 25px; }
+  .expense-table__col-head_sum {
+    width: 95px; }
+  .expense-table__col-head_comment {
+    width: 95px; }
+  .expense-table__col-head_del {
+    width: 25px; }
+  .expense-table__row:nth-child(odd) {
+    background-color: #e6e6e6; }
+  .expense-table__col {
+    font-size: 18px;
+    line-height: 22px;
+    height: 25px;
+    padding: 0 5px 0 5px;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid #1a1a1a;
+    position: relative; }
+  .expense-table__col_month {
+    font-size: 16px; }
+  .expense-table__col_sum {
+    text-align: right; }
+  .expense-table__col_comment {
+    text-align: left; }
+  .expense-table__col_del {
+    cursor: pointer; }
+  .expense-table__col_del:hover {
+    background-color: #cccccc; }
+  .expense-table__col_del:active {
+    background-color: #b3b3b3; }
+  .expense-table__img_del {
+    position: absolute;
+    top: 2px;
+    left: 2px; }
+  .expense-table__row.expense-table__row_total {
+    background-color: #ffffff; }

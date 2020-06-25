@@ -1,0 +1,86 @@
+.expense-table
+  border: 1px solid red
+  border-collapse: collapse
+  table-layout: fixed
+  width: 320px
+  margin: 5px 0 5px 0
+
+  &__row-head
+
+  &__col-head  
+    font-size: $FontSizeForColHead
+    line-height: 22px
+    padding: 0 5px 0 5px
+    text-overflow: ellipsis
+    white-space: nowrap
+    overflow: hidden
+    border: 1px solid $buttonBorderColor
+    height: 25px
+    position: relative
+   
+  &__col-head_month
+    width: 80px
+
+  &__col-head_curren
+    width: 25px
+       
+  &__col-head_sum
+    width: 95px
+   
+  &__col-head_comment
+    width: 95px   
+
+  &__col-head_del
+    width: 25px 
+    
+    
+
+  &__row:nth-child(odd)
+    background-color: $blockColor
+
+  
+
+  &__col   
+    font-size: $FontSizeForCol
+    line-height: 22px
+    height: 25px
+    padding: 0 5px 0 5px
+    white-space: nowrap
+    text-overflow: ellipsis
+    overflow: hidden
+    text-align: center
+    border: 1px solid $buttonBorderColor
+    position: relative
+    
+  
+
+  &__col_month
+    font-size: 16px
+
+  &__col_sum  
+    text-align: right
+
+  &__col_comment
+    text-align: left
+
+  &__col_del
+    cursor: pointer  
+
+  &__col_del:hover
+    background-color: $hoverColor
+
+  &__col_del:active
+    background-color: $activeColor
+        
+
+  &__img_del
+    position: absolute
+    top: 2px
+    left: 2px
+    
+
+
+  &__row.expense-table__row_total
+    background-color: $bgMobile    
+
+
