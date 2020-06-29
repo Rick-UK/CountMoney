@@ -587,6 +587,8 @@ body {
     font-size: 18px;
     line-height: 18px;
     font-weight: 400; }
+  .add-expenses__label-required {
+    color: #e62121; }
   .add-expenses__select {
     width: 150px;
     height: 30px;
@@ -597,7 +599,8 @@ body {
     color: #1a1a1a;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     font-size: 16px;
-    line-height: 16px; }
+    line-height: 16px;
+    background-color: #ffffff; }
   .add-expenses__select:hover {
     border: 2px solid #cccccc;
     padding: 0 4px 2px 0px; }
@@ -657,13 +660,13 @@ body {
     z-index: 2; }
   .add-expenses__date-input:hover + .add-expenses__date-visible {
     border: 2px solid #cccccc;
-    padding: 0 4px 0 4px; }
+    padding: 4px 4px 4px 4px; }
   .add-expenses__date-input:focus + .add-expenses__date-visible {
     border: 2px solid #cccccc;
-    padding: 0 4px 0 4px; }
+    padding: 4px 4px 4px 4px; }
   .add-expenses__date-input:active + .add-expenses__date-visible {
     border: 2px solid #b3b3b3;
-    padding: 0 4px 0 4px; }
+    padding: 4px 4px 4px 4px; }
   .add-expenses__date-visible {
     width: 150px;
     height: 30px;
@@ -673,9 +676,9 @@ body {
     z-index: 1;
     border: 2px solid #e6e6e6;
     border-radius: 5px;
-    padding: 0 4px 0 4px;
+    padding: 4px 4px 4px 4px;
     font-size: 16px;
-    line-height: 24px;
+    line-height: 18px;
     cursor: pointer; }
   .add-expenses__box {
     border: 2px solid #e6e6e6; }

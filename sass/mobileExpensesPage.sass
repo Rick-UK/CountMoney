@@ -105,6 +105,9 @@
     line-height: $h3
     font-weight: 400
 
+  &__label-required
+    color: $errorFontColor  
+
   &__select
     width: 150px
     height: 30px
@@ -116,6 +119,7 @@
     font-family: $mainFont
     font-size: $smallFontSize
     line-height: $smallFontSize 
+    background-color: $bgMobile
 
   &__select:hover  
     border: 2px solid $hoverColor
@@ -168,15 +172,15 @@
 
   &__date-input:hover + .add-expenses__date-visible
     border: 2px solid $hoverColor
-    padding: 0 4px 0 4px;
+    padding: 4px 4px 4px 4px
 
   &__date-input:focus + .add-expenses__date-visible
     border: 2px solid $hoverColor
-    padding: 0 4px 0 4px;
+    padding: 4px 4px 4px 4px
 
   &__date-input:active + .add-expenses__date-visible
     border: 2px solid $activeColor  
-    padding: 0 4px 0 4px;
+    padding: 4px 4px 4px 4px
      
 
   &__date-visible
@@ -188,9 +192,9 @@
     z-index: 1
     border: 2px solid $blockColor
     border-radius: 5px
-    padding: 0 4px 0 4px
+    padding: 4px 4px 4px 4px
     font-size: $smallFontSize  
-    line-height: 24px
+    line-height: 18px
     cursor: pointer
 
   &__box
