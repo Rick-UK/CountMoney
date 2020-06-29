@@ -547,3 +547,219 @@ body {
     left: 2px; }
   .expense-table__row.expense-table__row_total {
     background-color: #ffffff; }
+
+.add-expenses {
+  width: 300px;
+  margin: 5px auto; }
+  .add-expenses__title {
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 5px 0; }
+  .add-expenses__form {
+    background-color: white;
+    width: 300px;
+    padding: 5px 5px 5px 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  .add-expenses__label {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 290px;
+    margin-bottom: 5px; }
+  .add-expenses__label-title {
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 400; }
+  .add-expenses__select {
+    width: 150px;
+    height: 30px;
+    outline: none;
+    border: 2px solid #e6e6e6;
+    border-radius: 5px;
+    padding: 0 4px 2px 0px;
+    color: #1a1a1a;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-size: 16px;
+    line-height: 16px; }
+  .add-expenses__select:hover {
+    border: 2px solid #cccccc;
+    padding: 0 4px 2px 0px; }
+  .add-expenses__select:focus {
+    outline: none;
+    border: 2px solid #cccccc;
+    padding: 0 4px 2px 0px; }
+  .add-expenses__select:active {
+    outline: none;
+    border: 2px solid #b3b3b3;
+    padding: 0 4px 2px 0px; }
+  .add-expenses__select::-webkit-input-placeholder {
+    color: #1a1a1a;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-size: 16px;
+    line-height: 16px; }
+  .add-expenses__select:-ms-input-placeholder {
+    color: #1a1a1a;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-size: 16px;
+    line-height: 16px; }
+  .add-expenses__select::-ms-input-placeholder {
+    color: #1a1a1a;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-size: 16px;
+    line-height: 16px; }
+  .add-expenses__select::placeholder {
+    color: #1a1a1a;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-size: 16px;
+    line-height: 16px; }
+  .add-expenses__option {
+    outline: none;
+    border: none;
+    color: #1a1a1a;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-size: 16px;
+    line-height: 16px; }
+  .add-expenses__date-wrap {
+    border-radius: 5px;
+    width: 150px;
+    height: 30px;
+    position: relative;
+    overflow: hidden; }
+  .add-expenses__date-input {
+    outline: none;
+    border: none;
+    width: 150px;
+    height: 10px;
+    position: absolute;
+    top: -86px;
+    left: -1px;
+    -webkit-transform: scale(15, 1.5) rotate(90deg);
+    -ms-transform: scale(15, 1.5) rotate(90deg);
+    transform: scale(15, 1.5) rotate(90deg);
+    opacity: 0;
+    z-index: 2; }
+  .add-expenses__date-input:hover + .add-expenses__date-visible {
+    border: 2px solid #cccccc;
+    padding: 0 4px 0 4px; }
+  .add-expenses__date-input:focus + .add-expenses__date-visible {
+    border: 2px solid #cccccc;
+    padding: 0 4px 0 4px; }
+  .add-expenses__date-input:active + .add-expenses__date-visible {
+    border: 2px solid #b3b3b3;
+    padding: 0 4px 0 4px; }
+  .add-expenses__date-visible {
+    width: 150px;
+    height: 30px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    border: 2px solid #e6e6e6;
+    border-radius: 5px;
+    padding: 0 4px 0 4px;
+    font-size: 16px;
+    line-height: 24px;
+    cursor: pointer; }
+  .add-expenses__box {
+    border: 2px solid #e6e6e6; }
+  .add-expenses__input {
+    width: 150px;
+    height: 30px;
+    outline: none;
+    border: 2px solid #e6e6e6;
+    border-radius: 5px;
+    padding: 0 4px 0 4px;
+    font-size: 16px;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis; }
+  .add-expenses__input:hover {
+    border: 2px solid #cccccc;
+    padding: 0 4px 0 4px; }
+  .add-expenses__input:focus {
+    outline: none;
+    border: 2px solid #cccccc;
+    padding: 0 4px 0 4px; }
+  .add-expenses__input:active {
+    outline: none;
+    border: 2px solid #b3b3b3;
+    padding: 0 4px 0 4px; }
+  .add-expenses__input::-webkit-input-placeholder {
+    color: #1a1a1a;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-size: 16px;
+    line-height: 16px; }
+  .add-expenses__input:-ms-input-placeholder {
+    color: #1a1a1a;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-size: 16px;
+    line-height: 16px; }
+  .add-expenses__input::-ms-input-placeholder {
+    color: #1a1a1a;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-size: 16px;
+    line-height: 16px; }
+  .add-expenses__input::placeholder {
+    color: #1a1a1a;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-size: 16px;
+    line-height: 16px; }
+  .add-expenses__enter {
+    height: 40px;
+    min-width: 150px;
+    border: 1px solid #1a1a1a;
+    border-radius: 10px;
+    font-size: 18px;
+    line-height: 18px;
+    color: #1a1a1a;
+    font-weight: 700;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 0 20px 0 20px;
+    cursor: pointer;
+    background-color: #ffffff; }
+  .add-expenses__enter:hover {
+    background-color: #cccccc; }
+  .add-expenses__enter:focus {
+    background-color: #cccccc;
+    outline: none; }
+  .add-expenses__enter:active {
+    background-color: #b3b3b3; }
+
+.settings__checkbox:checked + .add-expenses__box {
+  border: 2px solid #b3b3b3;
+  background: #ffffff;
+  background-image: url("../img/checkmark.svg"); }
+
+.settings__checkbox:focus + .add-expenses__box {
+  border: 2px solid #cccccc;
+  background-color: #e6e6e6; }
+
+.settings__checkbox:hover + .add-expenses__box {
+  border: 2px solid #cccccc;
+  background-color: #e6e6e6; }
+
+.settings__checkbox:disabled + .add-expenses__box {
+  background-color: #cccccc;
+  border: 2px solid #cccccc; }
+
+.settings__checkbox:disabled:checked + .add-expenses__box {
+  background-color: #cccccc;
+  background-image: url("../img/checkmarkDisabled.svg"); }

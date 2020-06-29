@@ -33,12 +33,8 @@
   &__col-head_del
     width: 25px 
     
-    
-
   &__row:nth-child(odd)
     background-color: $blockColor
-
-  
 
   &__col   
     font-size: $FontSizeForCol
@@ -50,9 +46,7 @@
     overflow: hidden
     text-align: center
     border: 1px solid $buttonBorderColor
-    position: relative
-    
-  
+    position: relative 
 
   &__col_month
     font-size: 16px
@@ -70,17 +64,217 @@
     background-color: $hoverColor
 
   &__col_del:active
-    background-color: $activeColor
-        
+    background-color: $activeColor     
 
   &__img_del
     position: absolute
     top: 2px
     left: 2px
-    
-
 
   &__row.expense-table__row_total
     background-color: $bgMobile    
 
+.add-expenses
+  width: 300px
+  margin: 5px auto   
 
+  &__title
+    font-size: $h2
+    line-height: $h2
+    font-weight: 400
+    text-align: center
+    margin: 0 0 5px 0
+
+  &__form
+    background-color: white 
+    width: 300px  
+    padding: 5px 5px 5px 5px
+    display: flex
+    flex-direction: column
+    align-items: center
+    
+  &__label
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 290px  
+    margin-bottom: 5px
+
+  &__label-title
+    font-size: $h3
+    line-height: $h3
+    font-weight: 400
+
+  &__select
+    width: 150px
+    height: 30px
+    outline: none  
+    border: 2px solid $blockColor
+    border-radius: 5px
+    padding: 0 4px 2px 0px
+    color: $mainFontColor
+    font-family: $mainFont
+    font-size: $smallFontSize
+    line-height: $smallFontSize 
+
+  &__select:hover  
+    border: 2px solid $hoverColor
+    padding: 0 4px 2px 0px
+
+  &__select:focus  
+    outline: none
+    border: 2px solid $hoverColor  
+    padding: 0 4px 2px 0px
+
+  &__select:active  
+    outline: none
+    border: 2px solid $activeColor  
+    padding: 0 4px 2px 0px
+
+  &__select::placeholder 
+    color: $mainFontColor
+    font-family: $mainFont
+    font-size: $smallFontSize
+    line-height: $smallFontSize    
+
+  &__option
+    outline: none  
+    border: none  
+    color: $mainFontColor
+    font-family: $mainFont
+    font-size: $smallFontSize
+    line-height: $smallFontSize 
+
+  &__date-wrap
+    //border: 1px solid black
+    border-radius: 5px
+    width: 150px
+    height: 30px  
+    position: relative
+    overflow: hidden
+
+  &__date-input
+    outline: none
+    //box-shadow: 0 0 2px rgba(0,0,0,1);
+    border: none
+    width: 150px
+    height: 10px 
+    position: absolute
+    top: -86px
+    left: -1px
+    transform: scale(15, 1.5) rotate(90deg) 
+    opacity: 0
+    z-index: 2
+
+  &__date-input:hover + .add-expenses__date-visible
+    border: 2px solid $hoverColor
+    padding: 0 4px 0 4px;
+
+  &__date-input:focus + .add-expenses__date-visible
+    border: 2px solid $hoverColor
+    padding: 0 4px 0 4px;
+
+  &__date-input:active + .add-expenses__date-visible
+    border: 2px solid $activeColor  
+    padding: 0 4px 0 4px;
+     
+
+  &__date-visible
+    width: 150px
+    height: 30px
+    position: absolute
+    top: 0px
+    left: 0px
+    z-index: 1
+    border: 2px solid $blockColor
+    border-radius: 5px
+    padding: 0 4px 0 4px
+    font-size: $smallFontSize  
+    line-height: 24px
+    cursor: pointer
+
+  &__box
+    border: 2px solid $blockColor
+
+  &__input
+    width: 150px
+    height: 30px
+    outline: none  
+    border: 2px solid $blockColor
+    border-radius: 5px
+    padding: 0 4px 0 4px
+    font-size: $smallFontSize  
+    overflow: hidden
+    text-overflow: ellipsis
+
+  &__input:hover  
+    border: 2px solid $hoverColor
+    padding: 0 4px 0 4px;
+
+  &__input:focus  
+    outline: none
+    border: 2px solid $hoverColor  
+    padding: 0 4px 0 4px;
+
+  &__input:active  
+    outline: none
+    border: 2px solid $activeColor  
+    padding: 0 4px 0 4px;
+
+  &__input::placeholder 
+    color: $mainFontColor
+    font-family: $mainFont
+    font-size: $smallFontSize
+    line-height: $smallFontSize    
+
+  
+  &__enter
+    height: 40px
+    min-width: 150px
+    border: 1px solid $buttonBorderColor
+    border-radius: 10px
+    font-size: $btnFontSize
+    line-height: $btnFontSize
+    color: $mainFontColor
+    font-weight: 700
+    margin-top: 5px
+    margin-bottom: 5px
+    padding: 0 20px 0 20px
+    cursor: pointer
+    background-color: $buttonColor
+    
+  &__enter:hover
+    background-color: $hoverColor
+
+
+  &__enter:focus
+    background-color: $focusColor
+    outline: none
+
+  &__enter:active
+    background-color: $activeColor   
+
+.settings  
+  
+  &__checkbox:checked + .add-expenses__box
+    border: 2px solid $activeColor
+    background: $bgMobile
+    background-image: url("../img/checkmark.svg")
+
+  &__checkbox:focus + .add-expenses__box
+    border: 2px solid $hoverColor
+    background-color: $blockColor
+
+  &__checkbox:hover + .add-expenses__box
+    border: 2px solid $hoverColor
+    background-color: $blockColor
+
+  &__checkbox:disabled + .add-expenses__box
+    background-color: $hoverColor
+    border: 2px solid $hoverColor
+
+  &__checkbox:disabled:checked + .add-expenses__box
+    background-color: $hoverColor
+    background-image: url("../img/checkmarkDisabled.svg")
+
+    

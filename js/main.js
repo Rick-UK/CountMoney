@@ -21,14 +21,23 @@ function showdate(){
     let dateTo = document.getElementById ("date-interval__toTime-input");
     let lastdate = new Date(currentYear, currentMonth, 0);
     dateTo.value= currentYear+'-'+currentMonth+'-'+lastdate.getDate();
+
+    //Установка текущей даты в поле добаления расхода
+    let dateForExpenses = document.querySelector(".add-expenses__date-input");
+    if(dateForExpenses){
+        dateForExpenses.value= currentYear+'-'+currentMonth+'-'+currentDay;
+    }
     
     //Установка интервала в кастомизированные(фейковые) блоки формы
     let displayFrom = document.querySelector(".date-interval__fromTime-display");
     displayFrom.textContent = '01.'+currentMonth+'.'+String(currentYear).slice(2,4); 
 
-
     let displayTo = document.querySelector(".date-interval__toTime-display");
     displayTo.textContent = lastdate.getDate()+'.'+currentMonth+'.'+String(currentYear).slice(2,4); 
+
+    //Установка текущей даты в поле добаления расхода в кастомизированные(фейковые) блоки формы
+    let displayForExpenses = document.querySelector(".add-expenses__date-visible");
+    displayForExpenses.textContent = currentDay+'.'+currentMonth+'.'+String(currentYear).slice(2,4); 
 
     // Устанавливаем обработчики форм даты для 
     // отслеживания их изменений и записи в кастомные блоки
@@ -39,33 +48,32 @@ function showdate(){
         let displayBlock = (
             event.target.id == 'date-interval__fromTime-input')? 
             displayFrom : displayTo;
+
         displayBlock.textContent = 
             event.target.value.slice(8,11)+'.'
             +event.target.value.slice(5,7)+'.'
             +event.target.value.slice(2,4); 
 
-        // console.dir(displayFrom.textContent);  
-        // console.log(displayTo.textContent);
-        // if(displayFrom.textContent < displayTo.textContent) {
-        //     console.log("ok");
-        // }
-        // if(displayFrom.textContent > displayTo.textContent) {
-        //     console.log("not");
-        // }
-
         checkInterval (displayFrom.textContent , displayTo.textContent);
     }
 
 
-    
-    
+    // Устанавливаем обработчики форм даты добавления расхода для 
+    // отслеживания их изменений и записи в кастомные блоки
+    dateForExpenses.addEventListener("input",changeDate);
 
-     //dateFrom.value= year+'-'+month+'-'+day;
+    function changeDate (event){
+        console.dir(event.target);
+        let displayBlock = (
+            event.target.className == 'add-expenses__date-input')? 
+            displayForExpenses : displayForExpenses;
+        displayBlock.textContent = 
+            event.target.value.slice(8,11)+'.'
+            +event.target.value.slice(5,7)+'.'
+            +event.target.value.slice(2,4); 
 
+    }
 
-    
-
-    
 }           
 
 //Проверка верно указанного интервала
