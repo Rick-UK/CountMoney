@@ -1,0 +1,69 @@
+.add-income
+
+  &__sub-title
+    color: $mainFontColor
+    font-family: $mainFont
+    font-size: $smallFontSize
+    font-weight: 700
+    line-height: $smallFontSize 
+    margin-bottom: 5px
+
+  &__label
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 290px  
+    margin-bottom: 5px
+
+  &__input-wrap
+    position: relative  
+    width: 150px
+    flex-shrink: 0
+
+  &__input
+    width: 100px
+    height: 30px
+    outline: none  
+    border: 2px solid $blockColor
+    border-radius: 5px
+    padding: 0 4px 0 4px
+    font-size: $smallFontSize  
+    overflow: hidden
+    text-overflow: ellipsis
+
+  &__input:hover  
+    border: 2px solid $hoverColor
+    padding: 0 4px 0 4px;
+
+  &__input:focus  
+    outline: none
+    border: 2px solid $hoverColor  
+    padding: 0 4px 0 4px;
+
+  &__input:active  
+    outline: none
+    border: 2px solid $activeColor  
+    padding: 0 4px 0 4px;
+
+  &__input::placeholder 
+    color: $mainFontColor
+    font-family: $mainFont
+    font-size: $smallFontSize
+    line-height: $smallFontSize 
+
+  &__input_percent
+    width: 54px
+    position: absolute
+    top: 0px
+    right: -2px
+
+  &__percent
+    position: absolute
+    top: 7px
+    right: 0px
+    font-size: $smallFontSize
+    line-height: $smallFontSize
+    width: 15px
+    height: 16px
+    
+
