@@ -11,7 +11,7 @@
         <div class="wrap">
             <header class="header">
                 <img class="header__logo" src="img/logo.svg" alt="Logo" height="32px" width="32px">
-                <h1 class="header__title">Расходы: User123</h1>
+                <h1 class="header__title">Сальдо: User123</h1>
             </header>
             <main class="main">
                 <form class="date-interval" action="doInterval" method="POST" name="date-interval">
@@ -41,80 +41,124 @@
                     <table class="expense-table">
                         <thead>
                             <tr class="expense-table__row-head">
-                                <th class="expense-table__col-head expense-table__col-head_month">Месяц</th>
-                                <th class="expense-table__col-head expense-table__col-head_curren">&curren;</th>
-                                <th class="expense-table__col-head expense-table__col-head_sum">Сумма</th>
-                                <th class="expense-table__col-head expense-table__col-head_comment">Комментарий </th>
-                                <th class="expense-table__col-head expense-table__col-head_del">
-                                    <img class="expense-table__img_del" src="img/delete.svg" alt="del" height="20x" width="20px">
-                                </th>
+                                <th class="expense-table__col-head expense-table__col-head_month   balance-table__col-head_month">Месяц</th>
+                                <th class="expense-table__col-head expense-table__col-head_curren  balance-table__col-head_curren">&curren;</th>
+                                <th class="expense-table__col-head expense-table__col-head_sum     balance-table__col-head_income">Доход</th>
+                                <th class="expense-table__col-head expense-table__col-head_comment balance-table__col-head_expenses">Расход</th>
+                                <th class="expense-table__col-head expense-table__col-head_comment balance-table__col-head_balance">Сальдо</th>
                             </tr>
                         </thead>
 
                         <tbody>
                             <tr class="expense-table__row">
-                                <td class="expense-table__col expense-table__col_month">31.12.20</td>
+                                <td class="expense-table__col expense-table__col_month">Янв. 20</td>
                                 <td class="expense-table__col">&#8381;</td>
                                 <td class="expense-table__col expense-table__col_sum">40359dasdasds</td>
-                                <td class="expense-table__col expense-table__col_comment">Одежда</td>
-                                <td class="expense-table__col expense-table__col_del">
-                                    <img class="expense-table__img_del" src="img/delete.svg" alt="del" height="20px" width="20px">
-                                </td>
+                                <td class="expense-table__col expense-table__col_comment balance-table__col_expenses">40359</td>
+                                <td class="expense-table__col expense-table__col_comment balance-table__col_balance">40359</td>
                             </tr>
                             <tr class="expense-table__row">
-                                <td class="expense-table__col expense-table__col_month">31.12.20</td>
-                                <td class="expense-table__col">&#8381;</td>
+                                <td class="expense-table__col expense-table__col_month">Янв. 20</td>
+                                <td class="expense-table__col">&#36;</td>
                                 <td class="expense-table__col expense-table__col_sum">40359</td>
-                                <td class="expense-table__col expense-table__col_comment">Одежда</td>
-                                <td class="expense-table__col expense-table__col_del">
-                                    <img class="expense-table__img_del" src="img/delete.svg" alt="del" height="20px" width="20px">
-                                </td>
+                                <td class="expense-table__col expense-table__col_comment balance-table__col_expenses">40359</td>
+                                <td class="expense-table__col expense-table__col_comment balance-table__col_balance">40359</td>
                             </tr>
                             <tr class="expense-table__row">
-                                <td class="expense-table__col expense-table__col_month">31.12.20</td>
-                                <td class="expense-table__col">&#8381;</td>
+                                <td class="expense-table__col expense-table__col_month">Янв. 20</td>
+                                <td class="expense-table__col">&euro;</td>
                                 <td class="expense-table__col expense-table__col_sum">40359</td>
-                                <td class="expense-table__col expense-table__col_comment">Одежда</td>
-                                <td class="expense-table__col expense-table__col_del">
-                                    <img class="expense-table__img_del" src="img/delete.svg" alt="del" height="20px" width="20px">
-                                </td>
+                                <td class="expense-table__col expense-table__col_comment balance-table__col_expenses">40359</td>
+                                <td class="expense-table__col expense-table__col_comment balance-table__col_balance">40359</td>
                             </tr>
                             <tr class="expense-table__row">
-                                <td class="expense-table__col expense-table__col_month">31.12.20</td>
+                                <td class="expense-table__col expense-table__col_month">Фев. 20</td>
                                 <td class="expense-table__col">&#8381;</td>
                                 <td class="expense-table__col expense-table__col_sum">40359</td>
-                                <td class="expense-table__col expense-table__col_comment">Одежда</td>
-                                <td class="expense-table__col expense-table__col_del">
-                                    <img class="expense-table__img_del" src="img/delete.svg" alt="del" height="20px" width="20px">
-                                </td>
+                                <td class="expense-table__col expense-table__col_comment balance-table__col_expenses">40359</td>
+                                <td class="expense-table__col expense-table__col_comment balance-table__col_balance">40359</td>
                             </tr>
                             <tr class="expense-table__row">
-                                <td class="expense-table__col expense-table__col_month">31.12.20</td>
-                                <td class="expense-table__col">&#8381;</td>
+                                <td class="expense-table__col expense-table__col_month">Фев. 20</td>
+                                <td class="expense-table__col">&#36;</td>
                                 <td class="expense-table__col expense-table__col_sum">40359</td>
-                                <td class="expense-table__col expense-table__col_comment">Одежда</td>
-                                <td class="expense-table__col expense-table__col_del">
-                                    <img class="expense-table__img_del" src="img/delete.svg" alt="del" height="20px" width="20px">
-                                </td>
+                                <td class="expense-table__col expense-table__col_comment balance-table__col_expenses">40359</td>
+                                <td class="expense-table__col expense-table__col_comment balance-table__col_balance">40359</td>
                             </tr>
                             <tr class="expense-table__row">
-                                <td class="expense-table__col expense-table__col_month">31.12.20</td>
-                                <td class="expense-table__col">&#8381;</td>
+                                <td class="expense-table__col expense-table__col_month">Фев. 20</td>
+                                <td class="expense-table__col">&euro;</td>
                                 <td class="expense-table__col expense-table__col_sum">40359</td>
-                                <td class="expense-table__col expense-table__col_comment">Одежда</td>
-                                <td class="expense-table__col expense-table__col_del">
-                                    <img class="expense-table__img_del" src="img/delete.svg" alt="del" height="20px" width="20px">
-                                </td>
+                                <td class="expense-table__col expense-table__col_comment balance-table__col_expenses">40359</td>
+                                <td class="expense-table__col expense-table__col_comment balance-table__col_balance">40359</td>
+                            </tr>
+
+                            <tr class="expense-table__row">
+                                <td class="expense-table__col expense-table__col_month">Сен. 20</td>
+                                <td class="expense-table__col">&#8381;</td>
+                                <td class="expense-table__col expense-table__col_sum">40359dasdasds</td>
+                                <td class="expense-table__col expense-table__col_comment balance-table__col_expenses">40359</td>
+                                <td class="expense-table__col expense-table__col_comment balance-table__col_balance">40359</td>
                             </tr>
                             <tr class="expense-table__row">
-                                <td class="expense-table__col expense-table__col_month">31.12.20</td>
+                                <td class="expense-table__col expense-table__col_month">Сен. 20</td>
+                                <td class="expense-table__col">&#36;</td>
+                                <td class="expense-table__col expense-table__col_sum">40359</td>
+                                <td class="expense-table__col expense-table__col_comment balance-table__col_expenses">40359</td>
+                                <td class="expense-table__col expense-table__col_comment balance-table__col_balance">40359</td>
+                            </tr>
+                            <tr class="expense-table__row">
+                                <td class="expense-table__col expense-table__col_month">Сен. 20</td>
+                                <td class="expense-table__col">&euro;</td>
+                                <td class="expense-table__col expense-table__col_sum">40359</td>
+                                <td class="expense-table__col expense-table__col_comment balance-table__col_expenses">40359</td>
+                                <td class="expense-table__col expense-table__col_comment balance-table__col_balance">40359</td>
+                            </tr>
+                            
+                            <tr class="expense-table__row">
+                                <td class="expense-table__col expense-table__col_month">Окт. 20</td>
                                 <td class="expense-table__col">&#8381;</td>
                                 <td class="expense-table__col expense-table__col_sum">40359</td>
-                                <td class="expense-table__col expense-table__col_comment">Одежда</td>
-                                <td class="expense-table__col expense-table__col_del">
-                                    <img class="expense-table__img_del" src="img/delete.svg" alt="del" height="20px" width="20px">
-                                </td>
+                                <td class="expense-table__col expense-table__col_comment balance-table__col_expenses">40359</td>
+                                <td class="expense-table__col expense-table__col_comment balance-table__col_balance">40359</td>
                             </tr>
+
+                            <tr class="expense-table__row">
+                                <td class="expense-table__col expense-table__col_month">Ноя. 20</td>
+                                <td class="expense-table__col">&#8381;</td>
+                                <td class="expense-table__col expense-table__col_sum">40359</td>
+                                <td class="expense-table__col expense-table__col_comment balance-table__col_expenses">40359</td>
+                                <td class="expense-table__col expense-table__col_comment balance-table__col_balance">40359</td>
+                            </tr>
+                            <tr class="expense-table__row">
+                                <td class="expense-table__col expense-table__col_month">Ноя. 20</td>
+                                <td class="expense-table__col">&#36;</td>
+                                <td class="expense-table__col expense-table__col_sum">40359</td>
+                                <td class="expense-table__col expense-table__col_comment balance-table__col_expenses">40359</td>
+                                <td class="expense-table__col expense-table__col_comment balance-table__col_balance">40359</td>
+                            </tr>        
+                            
+                            <tr class="expense-table__row">
+                                <td class="expense-table__col expense-table__col_month">12.20</td>
+                                <td class="expense-table__col">&#8381;</td>
+                                <td class="expense-table__col expense-table__col_sum">40359dasdasds</td>
+                                <td class="expense-table__col expense-table__col_comment balance-table__col_expenses">40359</td>
+                                <td class="expense-table__col expense-table__col_comment balance-table__col_balance">40359</td>
+                            </tr>
+                            <tr class="expense-table__row">
+                                <td class="expense-table__col expense-table__col_month">12.20</td>
+                                <td class="expense-table__col">&#36;</td>
+                                <td class="expense-table__col expense-table__col_sum">40359</td>
+                                <td class="expense-table__col expense-table__col_comment balance-table__col_expenses">40359</td>
+                                <td class="expense-table__col expense-table__col_comment balance-table__col_balance">40359</td>
+                            </tr>
+                            <tr class="expense-table__row">
+                                <td class="expense-table__col expense-table__col_month">12.20</td>
+                                <td class="expense-table__col">&euro;</td>
+                                <td class="expense-table__col expense-table__col_sum">40359</td>
+                                <td class="expense-table__col expense-table__col_comment balance-table__col_expenses">40359</td>
+                                <td class="expense-table__col expense-table__col_comment balance-table__col_balance">40359</td>
+                            </tr>                            
 
                         </tbody>
 
@@ -129,7 +173,14 @@
                                     40359<br>
                                     40359
                                 </td>
-                                <td colspan="2" class="expense-table__col">31.12.20<br>31.12.20</td>
+                                <td class="expense-table__col balance-table__col_expenses">40359<br>
+                                    40359<br>
+                                    40359
+                                </td>
+                                <td class="expense-table__col balance-table__col_balance">40359<br>
+                                    40359<br>
+                                    40359
+                                </td>
                                 
                             </tr>
 
@@ -139,7 +190,7 @@
                 </section>
 
                 <section class="add-expenses"> 
-                    <h2 class="add-expenses__title">Добавить расход</h2>
+                    <h2 class="add-expenses__title">Добавить</h2>
                     <form class="add-expenses__form" action="add-expenses" method="POST" name="add-expenses">
                         <label class="add-expenses__label" >
 

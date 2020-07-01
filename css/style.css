@@ -858,3 +858,24 @@ body {
   line-height: 16px;
   width: 15px;
   height: 16px; }
+
+.balance-table__col-head_month {
+  width: 70px; }
+
+.balance-table__col-head_curren {
+  width: 25px; }
+
+.balance-table__col-head_income {
+  width: 75px; }
+
+.balance-table__col-head_expenses {
+  width: 75px; }
+
+.balance-table__col-head_balance {
+  width: 75px; }
+
+.balance-table__col_expenses {
+  text-align: right; }
+
+.balance-table__col_balance {
+  text-align: right; }
