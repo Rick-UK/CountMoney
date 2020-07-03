@@ -63,7 +63,7 @@ function showdate(){
     dateForExpenses.addEventListener("input",changeDate);
 
     function changeDate (event){
-        console.dir(event.target);
+        
         let displayBlock = (
             event.target.className == 'add-expenses__date-input')? 
             displayForExpenses : displayForExpenses;
@@ -92,3 +92,29 @@ function checkInterval (dateFrom,dateTo){
     }
 
 } 
+
+//Устанавливаем изменение части формы ввода данных,
+//В зависимости от типа Доход или Расход
+
+function changeTypeOfForm (){
+
+    const typeOfAdd = document.querySelector(".add-expenses__select");
+    typeOfAdd.addEventListener("input",changePieceOfForm);
+
+    function changePieceOfForm (){
+        console.log(typeOfAdd.value);
+        const expensePieceOfForm = document.querySelector('.add-balance__extra-item-expense');
+        const incomePieceOfForm = document.querySelector('.add-balance__extra-item-income');
+
+        if (typeOfAdd.value == 'expense'){  
+            expensePieceOfForm.style.display = "block";
+            incomePieceOfForm.style.display = "none";
+        }else{
+            expensePieceOfForm.style.display = "none";
+            incomePieceOfForm.style.display = "block";
+        }
+    }
+    changePieceOfForm();
+}
+
+changeTypeOfForm ();

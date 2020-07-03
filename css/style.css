@@ -773,7 +773,8 @@ body {
   font-size: 16px;
   font-weight: 700;
   line-height: 16px;
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+  text-align: center; }
 
 .add-income__label {
   display: -webkit-box;
@@ -879,3 +880,6 @@ body {
 
 .balance-table__col_balance {
   text-align: right; }
+
+.add-balance__extra-item-income {
+  display: none; }

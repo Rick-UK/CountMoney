@@ -205,19 +205,104 @@
                             <input class="add-expenses__input" type="text" placeholder="Введите комментарий" required>
                         </label>
 
-                        <label class="add-expenses__label" >
+                        <div class="add-balance__extra-item-expense">
+                            <label class="add-expenses__label" >
 
-                            <span class="add-expenses__label-title">Категория:</span>
+                                <span class="add-expenses__label-title">Категория:</span>
+    
+                                <select class="add-expenses__select" name="category" id="add-expenses__category">
+                                    <option class="add-expenses__option" value="category0">Текущие траты</option>
+                                    <option class="add-expenses__option" value="category1">Здоровье</option>
+                                    <option class="add-expenses__option" value="category2">Учеба</option>
+                                    <option class="add-expenses__option" value="category3">Большие траты</option>
+                                    <option class="add-expenses__option" value="category4">Подушка</option>
+                                    <option class="add-expenses__option" value="category5">Капитал</option>
+                                </select>
+                            </label>
+                        </div>
+                        
 
-                            <select class="add-expenses__select" name="category" id="add-expenses__category">
-                                <option class="add-expenses__option" value="category0">Текущие траты</option>
-                                <option class="add-expenses__option" value="category1">Здоровье</option>
-                                <option class="add-expenses__option" value="category2">Учеба</option>
-                                <option class="add-expenses__option" value="category3">Большие траты</option>
-                                <option class="add-expenses__option" value="category4">Подушка</option>
-                                <option class="add-expenses__option" value="category5">Капитал</option>
-                            </select>
-                        </label>
+
+                        <div class="add-balance__extra-item-income">
+                            <h3 class="add-income__sub-title">Категории накоплений</h3>
+
+                            <label class="add-income__label">
+
+                                <span class="add-income__label-title">Текущие расходы:</span>
+
+                                <div class="add-income__input-wrap">
+                                    <input class="add-income__input" type="number" placeholder="Сумма">
+
+                                    <input class="add-income__input add-income__input_percent" type="number" placeholder="">
+                                    <div class="add-income__percent">%</div>
+
+                                
+                                </div>
+                                
+
+                            </label>
+
+                            <label class="add-income__label">
+                                <span class="add-income__label-title">Здоровье:</span>
+
+                                <div class="add-income__input-wrap">
+                                    <input class="add-income__input" type="number" placeholder="Сумма">
+
+                                    <input class="add-income__input add-income__input_percent" type="number" placeholder="">
+                                    <div class="add-income__percent">%</div>
+
+                                </div>
+                            </label>
+
+                            <label class="add-income__label">
+                                <span class="add-income__label-title">Учеба:</span>
+
+                                <div class="add-income__input-wrap">
+                                    <input class="add-income__input" type="number" placeholder="Сумма">
+
+                                    <input class="add-income__input add-income__input_percent" type="number" placeholder="">
+                                    <div class="add-income__percent">%</div>
+
+                                </div>
+                            </label>
+
+                            <label class="add-income__label">
+                                <span class="add-income__label-title">Большие траты:</span>
+
+                                <div class="add-income__input-wrap">
+                                    <input class="add-income__input" type="number" placeholder="Сумма">
+
+                                    <input class="add-income__input add-income__input_percent" type="number" placeholder="">
+                                    <div class="add-income__percent">%</div>
+
+                                </div>
+                            </label>
+
+                            <label class="add-income__label">
+                                <span class="add-income__label-title">Подушка:</span>
+
+                                <div class="add-income__input-wrap">
+                                    <input class="add-income__input" type="number" placeholder="Сумма">
+
+                                    <input class="add-income__input add-income__input_percent" type="number" placeholder="">
+                                    <div class="add-income__percent">%</div>
+
+                                </div>
+                            </label>
+
+                            <label class="add-income__label">
+                                <span class="add-income__label-title">Капитал:</span>
+
+                                <div class="add-income__input-wrap">
+                                    <input class="add-income__input" type="number" placeholder="Сумма">
+
+                                    <input class="add-income__input add-income__input_percent" type="number" placeholder="">
+                                    <div class="add-income__percent">%</div>
+
+                                </div>
+                            </label>
+
+                        </div>
 
                         <button class="add-expenses__enter" type="button">Добавить</button>
 
