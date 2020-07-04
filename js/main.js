@@ -128,6 +128,51 @@ if (document.location.pathname != '/desk.html'){
 
 
 
-   
+// Функция добавления категорий накплений на "рабочем столе"
+
+if (document.location.pathname == '/desk.html'){
+
+    const buttonAccumulation = document.querySelector('.accumulation__button');
+    buttonAccumulation.addEventListener('click',addSavingCategory);
+
+    function addSavingCategory () {
+        const accumulation = document.querySelector('.accumulation');
+        const inputAccumulation = document.querySelector('.accumulation__input');
+        if(inputAccumulation.value == '') return;
+
+        const newSquareBlock = document.createElement('div');
+        newSquareBlock.classList = 'square-block';
+
+        const squareBlockTitle = document.createElement('h3');
+        squareBlockTitle.classList = 'square-block__title';
+        squareBlockTitle.textContent = inputAccumulation.value;
+        newSquareBlock.append(squareBlockTitle);
+        
+        let currencyArray = ['&#8381;','&#36;','&euro;']
+
+        for (let i=0; i < currencyArray.length; i++){
+
+            const squareBlockResult  = document.createElement('div');
+            squareBlockResult.classList = 'square-block__result';
+
+            const squareBlockCurrency = document.createElement('div');
+            squareBlockCurrency.classList = 'square-block__currency';
+            squareBlockCurrency.innerHTML = currencyArray[i];
+            squareBlockResult.append (squareBlockCurrency);
+
+            const squareBlockTotal = document.createElement('div');
+            squareBlockTotal.classList = 'square-block__total';
+            squareBlockTotal.textContent = '40 395';
+            squareBlockResult.append (squareBlockTotal);
+
+            newSquareBlock.append(squareBlockResult);
+        }
+
+        const lastSquareBlock = document.querySelectorAll ('.square-block');
+        lastSquareBlock[lastSquareBlock.length-1].after(newSquareBlock);
+
+    }
+
+}    
 
 
