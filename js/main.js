@@ -36,9 +36,10 @@ function showdate(){
     displayTo.textContent = lastdate.getDate()+'.'+currentMonth+'.'+String(currentYear).slice(2,4); 
 
     //Установка текущей даты в поле добаления расхода в кастомизированные(фейковые) блоки формы
-    let displayForExpenses = document.querySelector(".add-expenses__date-visible");
-    displayForExpenses.textContent = currentDay+'.'+currentMonth+'.'+String(currentYear).slice(2,4); 
-
+    if (document.location.pathname != '/desk.html'){
+        let displayForExpenses = document.querySelector(".add-expenses__date-visible");
+        displayForExpenses.textContent = currentDay+'.'+currentMonth+'.'+String(currentYear).slice(2,4); 
+    }
     // Устанавливаем обработчики форм даты для 
     // отслеживания их изменений и записи в кастомные блоки
     dateFrom.addEventListener("input",putDate);
@@ -60,18 +61,20 @@ function showdate(){
 
     // Устанавливаем обработчики форм даты добавления расхода для 
     // отслеживания их изменений и записи в кастомные блоки
-    dateForExpenses.addEventListener("input",changeDate);
+    if (document.location.pathname != '/desk.html'){
+        dateForExpenses.addEventListener("input",changeDate);
 
-    function changeDate (event){
-        
-        let displayBlock = (
-            event.target.className == 'add-expenses__date-input')? 
-            displayForExpenses : displayForExpenses;
-        displayBlock.textContent = 
-            event.target.value.slice(8,11)+'.'
-            +event.target.value.slice(5,7)+'.'
-            +event.target.value.slice(2,4); 
+        function changeDate (event){
+            
+            let displayBlock = (
+                event.target.className == 'add-expenses__date-input')? 
+                displayForExpenses : displayForExpenses;
+            displayBlock.textContent = 
+                event.target.value.slice(8,11)+'.'
+                +event.target.value.slice(5,7)+'.'
+                +event.target.value.slice(2,4); 
 
+        }
     }
 
 }           
@@ -96,25 +99,35 @@ function checkInterval (dateFrom,dateTo){
 //Устанавливаем изменение части формы ввода данных,
 //В зависимости от типа Доход или Расход
 
-function changeTypeOfForm (){
+if (document.location.pathname != '/desk.html'){
+    
+    let changeTypeOfForm = function (){
 
-    const typeOfAdd = document.querySelector(".add-expenses__select");
-    typeOfAdd.addEventListener("input",changePieceOfForm);
-
-    function changePieceOfForm (){
-        console.log(typeOfAdd.value);
-        const expensePieceOfForm = document.querySelector('.add-balance__extra-item-expense');
-        const incomePieceOfForm = document.querySelector('.add-balance__extra-item-income');
-
-        if (typeOfAdd.value == 'expense'){  
-            expensePieceOfForm.style.display = "block";
-            incomePieceOfForm.style.display = "none";
-        }else{
-            expensePieceOfForm.style.display = "none";
-            incomePieceOfForm.style.display = "block";
+        const typeOfAdd = document.querySelector(".add-expenses__select");
+        typeOfAdd.addEventListener("input",changePieceOfForm);
+    
+        function changePieceOfForm (){
+    
+            const expensePieceOfForm = document.querySelector('.add-balance__extra-item-expense');
+            const incomePieceOfForm = document.querySelector('.add-balance__extra-item-income');
+    
+            if (typeOfAdd.value == 'expense'){  
+                expensePieceOfForm.style.display = "block";
+                incomePieceOfForm.style.display = "none";
+            }else{
+                expensePieceOfForm.style.display = "none";
+                incomePieceOfForm.style.display = "block";
+            }
         }
+        changePieceOfForm();
     }
-    changePieceOfForm();
+
+    changeTypeOfForm ();
 }
 
-changeTypeOfForm ();
+
+
+
+   
+
+
