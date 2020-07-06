@@ -63,12 +63,12 @@ function showdate(){
     // отслеживания их изменений и записи в кастомные блоки
     if (document.location.pathname != '/desk.html'){
         dateForExpenses.addEventListener("input",changeDate);
+        let displayForExpenses = document.querySelector(".add-expenses__date-visible");
 
         function changeDate (event){
             
             let displayBlock = (
-                event.target.className == 'add-expenses__date-input')? 
-                displayForExpenses : displayForExpenses;
+                event.target.className == 'add-expenses__date-input')?displayForExpenses:displayForExpenses;
             displayBlock.textContent = 
                 event.target.value.slice(8,11)+'.'
                 +event.target.value.slice(5,7)+'.'
@@ -176,3 +176,68 @@ if (document.location.pathname == '/desk.html'){
 }    
 
 
+// Функция добавления расходов и доходов в таблицу 
+const addExpensesEnter = document.querySelector ('.add-expenses__enter');
+addExpensesEnter.addEventListener('click',addIncomeAndExpenses);
+
+function addIncomeAndExpenses (){
+    const page = document.location.pathname;
+    console.log(page);
+
+    const type = document.querySelector('.add-expenses__select').value;
+    console.log(type);
+
+    const date = document.querySelector('.add-expenses__date-visible').textContent;
+    console.log(date);
+
+    const currency = document.querySelector('.settings__checkbox:checked').value;
+    console.log(currency);
+
+    const amount = document.querySelector('.add-expenses__input-amount').value;
+    console.dir(amount);
+
+    const comment = document.querySelector('.add-expenses__input-comment').value;
+    console.dir(comment);
+
+    const category = document.getElementById('add-expenses__category').value;
+    console.dir(category);
+
+    const newTr = document.createElement ('tr');
+    newTr.classList = 'expense-table__row';
+
+    const tdDate = document.createElement ('td');
+    tdDate.classList = 'expense-table__col expense-table__col_month';
+    tdDate.textContent = date;
+    newTr.append(tdDate);
+
+    const tdCurrency = document.createElement ('td');
+    tdCurrency.classList = 'expense-table__col';
+    const currencyObject = {
+        RUB:'&#8381;',
+        USD:'&#36;',
+        EUR:'&euro;',
+    };
+    tdCurrency.innerHTML = currencyObject[currency];
+    newTr.append(tdCurrency);
+
+    const tdAmount = document.createElement ('td');
+    tdAmount.classList = 'expense-table__col expense-table__col_sum';
+    tdAmount.textContent = amount;
+    newTr.append(tdAmount);
+
+    const tdComment = document.createElement ('td');
+    tdComment.classList = 'expense-table__col expense-table__col_comment';
+    tdComment.textContent = comment;
+    newTr.append(tdComment);
+
+    const tdDel = document.createElement ('td');
+    tdDel.classList = 'expense-table__col expense-table__col_del';
+    tdDel.innerHTML = '<img class="expense-table__img_del" src="img/delete.svg" alt="del" height="20px" width="20px">';
+    newTr.append(tdDel);
+
+    const lastExpenseTableRow = document.querySelector('tr[class="expense-table__row"]:last-child');
+    console.log(lastExpenseTableRow);
+
+    lastExpenseTableRow.after(newTr);
+
+}
