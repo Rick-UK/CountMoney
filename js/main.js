@@ -231,8 +231,42 @@ function addIncomeAndExpenses (){
     tdDel.innerHTML = '<img class="expense-table__img_del" src="img/delete.svg" alt="del" height="20px" width="20px">';
     newTr.append(tdDel);
 
-    const lastExpenseTableRow = document.querySelector('tr[class="expense-table__row"]:last-child');
+    const tbody = document.querySelector('.expense-table tbody');
 
-    lastExpenseTableRow.after(newTr);
-
+    tbody.append(newTr);
 }
+
+
+// Функция удаления строк таблицы по клику на крестик
+
+if(document.location.pathname == '/expenses.html' || document.location.pathname == '/income.html'){
+    
+
+    let delRowListener = function (){
+        const tbody = document.querySelector('.expense-table tbody');
+        
+
+        let delRow = function (event){
+            if(event.target.className == 'expense-table__img_del'){
+                let del = event.target.parentElement;
+                let row = del.parentElement;
+                row.remove();
+            }
+
+            if(event.target.className == 'expense-table__col expense-table__col_del'){
+                console.log(event.target.parentElement);
+                event.target.parentElement.remove();
+            }
+
+        }
+
+        tbody.addEventListener ('click', delRow);
+    } 
+
+    window.addEventListener("load",delRowListener);
+}
+
+
+
+
+
