@@ -177,30 +177,26 @@ if (document.location.pathname == '/desk.html'){
 
 
 // Функция добавления расходов и доходов в таблицу 
-const addExpensesEnter = document.querySelector ('.add-expenses__enter');
-addExpensesEnter.addEventListener('click',addIncomeAndExpenses);
+if (document.location.pathname == '/expenses.html'){
+    const addExpensesEnter = document.querySelector ('.add-expenses__enter');
+    addExpensesEnter.addEventListener('click',addIncomeAndExpenses);
+}
 
-function addIncomeAndExpenses (){
-    const page = document.location.pathname;
-    console.log(page);
+
+function addIncomeAndExpenses (){ 
 
     const type = document.querySelector('.add-expenses__select').value;
-    console.log(type);
+
+    if (type != 'expense') return;
 
     const date = document.querySelector('.add-expenses__date-visible').textContent;
-    console.log(date);
 
     const currency = document.querySelector('.settings__checkbox:checked').value;
-    console.log(currency);
 
     const amount = document.querySelector('.add-expenses__input-amount').value;
-    console.dir(amount);
 
     const comment = document.querySelector('.add-expenses__input-comment').value;
-    console.dir(comment);
 
-    const category = document.getElementById('add-expenses__category').value;
-    console.dir(category);
 
     const newTr = document.createElement ('tr');
     newTr.classList = 'expense-table__row';
@@ -236,7 +232,6 @@ function addIncomeAndExpenses (){
     newTr.append(tdDel);
 
     const lastExpenseTableRow = document.querySelector('tr[class="expense-table__row"]:last-child');
-    console.log(lastExpenseTableRow);
 
     lastExpenseTableRow.after(newTr);
 
