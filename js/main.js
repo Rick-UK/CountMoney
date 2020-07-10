@@ -234,7 +234,42 @@ function addIncomeAndExpenses (){
     const tbody = document.querySelector('.expense-table tbody');
 
     tbody.append(newTr);
+
+    document.querySelector('.add-expenses__input-amount').value = '';
+
+    document.querySelector('.add-expenses__input-comment').value = '';
+
+    //добавляем логирование с последней датой добавления данных
+    const logging = document.querySelector('.add-expenses__logging');
+    const objDate = new Date();
+    logging.textContent = `Данные додавлены: ${objDate.getHours()}:${objDate.getMinutes()}:${objDate.getSeconds()}   `;
+    logging.style.display = 'block';
 }
+
+// Функция распределения суммы ДС по категориям накоплений в форме добавления дохода
+
+if(document.location.pathname == '/expenses.html' || document.location.pathname == '/income.html'){
+    const extraItemIncome = document.querySelector('.add-balance__extra-item-income');
+
+    const incomeDistribution = function (event){
+        if (event.target.className != 'add-income__input add-income__input_percent') return;
+        console.log('asf');
+        const inputPercentValue = event.target.value;
+        const amountValue = document.querySelector('.add-expenses__input-amount').value;
+        const incomeInput = event.target.previousElementSibling;
+        incomeInput.value = `${(amountValue/100)*inputPercentValue}`;
+        
+    } ;
+
+
+
+
+
+    extraItemIncome.addEventListener('input',incomeDistribution);
+
+    
+}
+
 
 
 // Функция удаления строк таблицы по клику на крестик

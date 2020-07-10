@@ -745,6 +745,14 @@ body {
     outline: none; }
   .add-expenses__enter:active {
     background-color: #b3b3b3; }
+  .add-expenses__logging {
+    display: none;
+    font-size: 16px;
+    line-height: 16px;
+    color: #e62121;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px; }
 
 .settings__checkbox:checked + .add-expenses__box {
   border: 2px solid #b3b3b3;
