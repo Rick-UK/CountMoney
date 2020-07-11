@@ -242,32 +242,44 @@ function addIncomeAndExpenses (){
     //добавляем логирование с последней датой добавления данных
     const logging = document.querySelector('.add-expenses__logging');
     const objDate = new Date();
-    logging.textContent = `Данные додавлены: ${objDate.getHours()}:${objDate.getMinutes()}:${objDate.getSeconds()}   `;
+    logging.textContent = `Последнее добавление было в: ${objDate.getHours()}:${objDate.getMinutes()}:${objDate.getSeconds()}   `;
     logging.style.display = 'block';
 }
 
 // Функция распределения суммы ДС по категориям накоплений в форме добавления дохода
 
 if(document.location.pathname == '/expenses.html' || document.location.pathname == '/income.html'){
+
+    //Изменение суммы категории в зависимости от % 
     const extraItemIncome = document.querySelector('.add-balance__extra-item-income');
 
-    const incomeDistribution = function (event){
+    const partIncomeDistribution = function (event){
         if (event.target.className != 'add-income__input add-income__input_percent') return;
-        console.log('asf');
         const inputPercentValue = event.target.value;
         const amountValue = document.querySelector('.add-expenses__input-amount').value;
         const incomeInput = event.target.previousElementSibling;
-        incomeInput.value = `${(amountValue/100)*inputPercentValue}`;
+        incomeInput.value = `${Math.floor((amountValue/100)*inputPercentValue)}`;
         
     } ;
 
+    extraItemIncome.addEventListener('input',partIncomeDistribution);
 
-
-
-
-    extraItemIncome.addEventListener('input',incomeDistribution);
-
+    // Изменение всех сумм категорий в зависимости от введенной суммы
+    const inputAmount = document.querySelector('.add-expenses__input.add-expenses__input-amount');
+    const arrayOfInputPercent = document.querySelectorAll('.add-income__input.add-income__input_percent');
     
+    const fullIncomeDistribution = function (){
+        
+        for (let i=0; i < arrayOfInputPercent.length ;i++){
+            const inputPercentValue = arrayOfInputPercent[i].value;
+            const incomeInput = arrayOfInputPercent[i].previousElementSibling;
+            incomeInput.value = `${Math.floor((inputAmount.value/100)*inputPercentValue)}`;
+        }
+        
+        
+    };
+
+    inputAmount.addEventListener('input',fullIncomeDistribution);
 }
 
 
