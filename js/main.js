@@ -177,17 +177,27 @@ if (document.location.pathname == '/desk.html'){
 
 
 // Функция добавления расходов и доходов в таблицу 
-if (document.location.pathname == '/expenses.html'){
+if (document.location.pathname == '/expenses.html' || document.location.pathname == '/income.html' || document.location.pathname == '/balance.html'){
     const addExpensesEnter = document.querySelector ('.add-expenses__enter');
-    addExpensesEnter.addEventListener('click',addIncomeAndExpenses);
+    addExpensesEnter.addEventListener('click',addExpenses);
 }
 
-
-function addIncomeAndExpenses (){ 
+function addExpenses (){ 
 
     const type = document.querySelector('.add-expenses__select').value;
 
-    if (type != 'expense') return;
+    if (document.location.pathname == '/expenses.html' && type != 'expense') {
+        log();
+        return;
+    };
+    if (document.location.pathname == '/income.html' && type != 'income') {
+        log();
+        return;
+    };
+    if (document.location.pathname == '/balance.html') {
+        log();
+        return;
+    };
 
     const date = document.querySelector('.add-expenses__date-visible').textContent;
 
@@ -240,15 +250,20 @@ function addIncomeAndExpenses (){
     document.querySelector('.add-expenses__input-comment').value = '';
 
     //добавляем логирование с последней датой добавления данных
-    const logging = document.querySelector('.add-expenses__logging');
-    const objDate = new Date();
-    logging.textContent = `Последнее добавление было в: ${objDate.getHours()}:${objDate.getMinutes()}:${objDate.getSeconds()}   `;
-    logging.style.display = 'block';
+    function log (){
+        const logging = document.querySelector('.add-expenses__logging');
+        const objDate = new Date();
+        logging.textContent = `Последнее добавление было в: ${objDate.getHours()}:${objDate.getMinutes()}:${objDate.getSeconds()}   `;
+        logging.style.display = 'block';
+    }
+    log ();
 }
+
+
 
 // Функция распределения суммы ДС по категориям накоплений в форме добавления дохода
 
-if(document.location.pathname == '/expenses.html' || document.location.pathname == '/income.html'){
+if(document.location.pathname == '/expenses.html' || document.location.pathname == '/income.html' || document.location.pathname == '/balance.html'){
 
     //Изменение суммы категории в зависимости от % 
     const extraItemIncome = document.querySelector('.add-balance__extra-item-income');
