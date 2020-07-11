@@ -147,7 +147,8 @@ body {
     position: -webkit-sticky;
     position: sticky;
     left: 0;
-    bottom: 0; }
+    bottom: 0;
+    z-index: 3; }
   .menu__link-wrap {
     list-style: none;
     -webkit-box-flex: 1;
