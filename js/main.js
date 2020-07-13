@@ -188,14 +188,17 @@ function addExpenses (){
 
     if (document.location.pathname == '/expenses.html' && type != 'expense') {
         log();
+        clearInputs ();
         return;
     };
     if (document.location.pathname == '/income.html' && type != 'income') {
         log();
+        clearInputs ();
         return;
     };
     if (document.location.pathname == '/balance.html') {
         log();
+        clearInputs ();
         return;
     };
 
@@ -245,9 +248,14 @@ function addExpenses (){
 
     tbody.append(newTr);
 
-    document.querySelector('.add-expenses__input-amount').value = '';
+    function clearInputs (){
+        document.querySelector('.add-expenses__input-amount').value = '';
 
-    document.querySelector('.add-expenses__input-comment').value = '';
+        document.querySelector('.add-expenses__input-comment').value = '';
+    }
+
+    clearInputs ();
+
 
     //добавляем логирование с последней датой добавления данных
     function log (){
