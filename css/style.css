@@ -511,7 +511,8 @@ body {
   .expense-table__col-head_curren {
     width: 25px; }
   .expense-table__col-head_sum {
-    width: 95px; }
+    width: 95px;
+    cursor: pointer; }
   .expense-table__col-head_comment {
     width: 95px; }
   .expense-table__col-head_del {

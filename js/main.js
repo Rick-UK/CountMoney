@@ -336,7 +336,29 @@ if(document.location.pathname == '/expenses.html' || document.location.pathname 
     window.addEventListener("load",delRowListener);
 }
 
+if(document.location.pathname == '/expenses.html'){
 
+    let row = document.querySelector('.expense-table__row-head');
+    row.addEventListener('click',getSort);
+
+    function getSort (event){
+        let nessesaryCol;
+        if (event.target.className == 'expense-table__col-head expense-table__col-head_sum'){
+            nessesaryCol = 'tbody .expense-table__col.expense-table__col_sum';
+        }
+        let arrayOfCols = Array.from(document.querySelectorAll(nessesaryCol));
+        
+        arrayOfCols.sort( (a, b) => a.textContent - b.textContent );
+        console.log(arrayOfCols[0].parentElement);
+         let tbody = document.querySelector('tbody');
+         for (let i=0; i<arrayOfCols.length ;i++){
+             tbody.append(arrayOfCols[i].parentElement);
+         }
+       
+
+    }
+
+}
 
 
 
