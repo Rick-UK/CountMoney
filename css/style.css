@@ -507,14 +507,17 @@ body {
     height: 25px;
     position: relative; }
   .expense-table__col-head_month {
-    width: 80px; }
+    width: 80px;
+    cursor: pointer; }
   .expense-table__col-head_curren {
-    width: 25px; }
+    width: 25px;
+    cursor: pointer; }
   .expense-table__col-head_sum {
     width: 95px;
     cursor: pointer; }
   .expense-table__col-head_comment {
-    width: 95px; }
+    width: 95px;
+    cursor: pointer; }
   .expense-table__col-head_del {
     width: 25px; }
   .expense-table__row:nth-child(odd) {

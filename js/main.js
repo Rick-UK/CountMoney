@@ -220,7 +220,7 @@ function addExpenses (){
     newTr.append(tdDate);
 
     const tdCurrency = document.createElement ('td');
-    tdCurrency.classList = 'expense-table__col';
+    tdCurrency.classList = 'expense-table__col expense-table__col_curren';
     const currencyObject = {
         RUB:'&#8381;',
         USD:'&#36;',
@@ -336,24 +336,131 @@ if(document.location.pathname == '/expenses.html' || document.location.pathname 
     window.addEventListener("load",delRowListener);
 }
 
-if(document.location.pathname == '/expenses.html'){
+// Функция сортировки столбцов таблицы
+
+
+if(document.location.pathname == '/expenses.html' || document.location.pathname == '/income.html'){
 
     let row = document.querySelector('.expense-table__row-head');
     row.addEventListener('click',getSort);
+    let directionOfSort = 0;
 
     function getSort (event){
+
         let nessesaryCol;
+        let arrayOfCols;
         if (event.target.className == 'expense-table__col-head expense-table__col-head_sum'){
             nessesaryCol = 'tbody .expense-table__col.expense-table__col_sum';
+
+            arrayOfCols = Array.from(document.querySelectorAll(nessesaryCol));
+            sortNumbers ();
         }
-        let arrayOfCols = Array.from(document.querySelectorAll(nessesaryCol));
-        
-        arrayOfCols.sort( (a, b) => a.textContent - b.textContent );
-        console.log(arrayOfCols[0].parentElement);
-         let tbody = document.querySelector('tbody');
-         for (let i=0; i<arrayOfCols.length ;i++){
-             tbody.append(arrayOfCols[i].parentElement);
-         }
+
+        if (event.target.className == 'expense-table__col-head expense-table__col-head_comment'){
+            nessesaryCol = 'tbody .expense-table__col.expense-table__col_comment';
+
+            arrayOfCols = Array.from(document.querySelectorAll(nessesaryCol));
+            sortStrungs ();
+        }
+
+        if (event.target.className == 'expense-table__col-head expense-table__col-head_curren'){
+            nessesaryCol = 'tbody .expense-table__col.expense-table__col_curren';
+
+            arrayOfCols = Array.from(document.querySelectorAll(nessesaryCol));
+            sortStrungs ();
+        }
+
+        if (event.target.className == 'expense-table__col-head expense-table__col-head_month'){
+            nessesaryCol = 'tbody .expense-table__col.expense-table__col_month';
+
+            arrayOfCols = Array.from(document.querySelectorAll(nessesaryCol));
+            sortDate ();
+        }
+
+
+        function sortNumbers (){
+            if(directionOfSort == 0){
+                arrayOfCols.sort( (a, b) => a.textContent - b.textContent );
+                directionOfSort = 1;
+    
+            }else{
+                arrayOfCols.sort( (a, b) => b.textContent - a.textContent );
+                directionOfSort = 0;
+      
+            }
+        }
+
+        function sortStrungs (){
+            if(directionOfSort == 0){
+                arrayOfCols.sort( 
+                    function(a, b){
+                        let nameA=a.textContent, nameB=b.textContent;
+                        if (nameA < nameB) 
+                        return -1
+                        if (nameA > nameB)
+                        return 1
+                        return 0 
+                        }
+                
+                
+                );
+                directionOfSort = 1;
+    
+            }else{
+                arrayOfCols.sort( 
+                    function(a, b){
+                        let nameA=a.textContent, nameB=b.textContent;
+                        if (nameB < nameA) 
+                        return -1
+                        if (nameB > nameA)
+                        return 1
+                        return 0 
+                        }
+                );
+                directionOfSort = 0;
+      
+            }
+        }
+
+        function sortDate (){
+            if(directionOfSort == 0){
+                arrayOfCols.sort( 
+                    function(a, b){
+                        let dateA=a.textContent.slice(6,8)*365+a.textContent.slice(3,5)*31+a.textContent.slice(0,2);
+                        let dateB=b.textContent.slice(6,8)*365+b.textContent.slice(3,5)*31+b.textContent.slice(0,2);
+
+                        if (dateA < dateB) 
+                        return -1
+                        if (dateA > dateB)
+                        return 1
+                        return 0 
+                        }
+                
+                );
+                directionOfSort = 1;
+    
+            }else{
+                arrayOfCols.sort( 
+                    function(a, b){
+                        let dateA=a.textContent.slice(6,8)*365+a.textContent.slice(3,5)*31+a.textContent.slice(0,2);
+                        let dateB=b.textContent.slice(6,8)*365+b.textContent.slice(3,5)*31+b.textContent.slice(0,2);
+
+                        if (dateB < dateA) 
+                        return -1
+                        if (dateB > dateA)
+                        return 1
+                        return 0 
+                        }
+                );
+                directionOfSort = 0;
+      
+            }
+        }
+
+        let tbody = document.querySelector('tbody');
+        for (let i=0; i<arrayOfCols.length ;i++){
+            tbody.append(arrayOfCols[i].parentElement);
+        }
        
 
     }
