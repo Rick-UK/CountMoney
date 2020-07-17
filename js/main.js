@@ -82,18 +82,17 @@ function showdate(){
 //Проверка верно указанного интервала
 
 function checkInterval (dateFrom,dateTo){
-    console.log ('работаем');
+
+    dateFrom = dateFrom.slice(6,8)*365+dateFrom.slice(3,5)*31+dateFrom.slice(0,2);
+    dateTo = dateTo.slice(6,8)*365+dateTo.slice(3,5)*31+dateTo.slice(0,2);
+
     let deteError = document.querySelector('.date-interval__error');
     if(dateFrom < dateTo || dateFrom == dateTo) {
         deteError.style.display = 'none';
-        console.log ('ok');
-
     } 
     if(dateFrom > dateTo) {
         deteError.style.display = 'block';
-
     }
-
 } 
 
 //Устанавливаем изменение части формы ввода данных,
@@ -324,7 +323,6 @@ if(document.location.pathname == '/expenses.html' || document.location.pathname 
             }
 
             if(event.target.className == 'expense-table__col expense-table__col_del'){
-                console.log(event.target.parentElement);
                 event.target.parentElement.remove();
             }
 
