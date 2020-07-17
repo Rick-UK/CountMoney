@@ -341,12 +341,13 @@ if(document.location.pathname == '/expenses.html' || document.location.pathname 
 
     let row = document.querySelector('.expense-table__row-head');
     row.addEventListener('click',getSort);
+    let nessesaryCol;
+    let arrayOfCols = Array.from(document.querySelectorAll(nessesaryCol));
     let directionOfSort = 0;
 
     function getSort (event){
 
-        let nessesaryCol;
-        let arrayOfCols;
+        
         if (event.target.className == 'expense-table__col-head expense-table__col-head_sum'){
             nessesaryCol = 'tbody .expense-table__col.expense-table__col_sum';
 
@@ -376,84 +377,7 @@ if(document.location.pathname == '/expenses.html' || document.location.pathname 
         }
 
 
-        function sortNumbers (){
-            if(directionOfSort == 0){
-                arrayOfCols.sort( (a, b) => a.textContent - b.textContent );
-                directionOfSort = 1;
-    
-            }else{
-                arrayOfCols.sort( (a, b) => b.textContent - a.textContent );
-                directionOfSort = 0;
-      
-            }
-        }
 
-        function sortStrungs (){
-            if(directionOfSort == 0){
-                arrayOfCols.sort( 
-                    function(a, b){
-                        let nameA=a.textContent, nameB=b.textContent;
-                        if (nameA < nameB) 
-                        return -1
-                        if (nameA > nameB)
-                        return 1
-                        return 0 
-                        }
-                
-                
-                );
-                directionOfSort = 1;
-    
-            }else{
-                arrayOfCols.sort( 
-                    function(a, b){
-                        let nameA=a.textContent, nameB=b.textContent;
-                        if (nameB < nameA) 
-                        return -1
-                        if (nameB > nameA)
-                        return 1
-                        return 0 
-                        }
-                );
-                directionOfSort = 0;
-      
-            }
-        }
-
-        function sortDate (){
-            if(directionOfSort == 0){
-                arrayOfCols.sort( 
-                    function(a, b){
-                        let dateA=a.textContent.slice(6,8)*365+a.textContent.slice(3,5)*31+a.textContent.slice(0,2);
-                        let dateB=b.textContent.slice(6,8)*365+b.textContent.slice(3,5)*31+b.textContent.slice(0,2);
-
-                        if (dateA < dateB) 
-                        return -1
-                        if (dateA > dateB)
-                        return 1
-                        return 0 
-                        }
-                
-                );
-                directionOfSort = 1;
-    
-            }else{
-                arrayOfCols.sort( 
-                    function(a, b){
-                        let dateA=a.textContent.slice(6,8)*365+a.textContent.slice(3,5)*31+a.textContent.slice(0,2);
-                        let dateB=b.textContent.slice(6,8)*365+b.textContent.slice(3,5)*31+b.textContent.slice(0,2);
-
-                        if (dateB < dateA) 
-                        return -1
-                        if (dateB > dateA)
-                        return 1
-                        return 0 
-                        }
-                );
-                directionOfSort = 0;
-      
-            }
-        }
 
         let tbody = document.querySelector('tbody');
         for (let i=0; i<arrayOfCols.length ;i++){
@@ -463,7 +387,153 @@ if(document.location.pathname == '/expenses.html' || document.location.pathname 
 
     }
 
+    function sortNumbers (){
+        
+        if(directionOfSort == 0){
+            arrayOfCols.sort( (a, b) => a.textContent - b.textContent );
+            directionOfSort = 1;
+
+        }else{
+            arrayOfCols.sort( (a, b) => b.textContent - a.textContent );
+            directionOfSort = 0;
+  
+        }
+    }
+
+    function sortStrungs (){
+        if(directionOfSort == 0){
+            arrayOfCols.sort( 
+                function(a, b){
+                    let nameA=a.textContent, nameB=b.textContent;
+                    if (nameA < nameB) 
+                    return -1
+                    if (nameA > nameB)
+                    return 1
+                    return 0 
+                    }
+            
+            
+            );
+            directionOfSort = 1;
+
+        }else{
+            arrayOfCols.sort( 
+                function(a, b){
+                    let nameA=a.textContent, nameB=b.textContent;
+                    if (nameB < nameA) 
+                    return -1
+                    if (nameB > nameA)
+                    return 1
+                    return 0 
+                    }
+            );
+            directionOfSort = 0;
+  
+        }
+    }
+
+    function sortDate (){
+        if(directionOfSort == 0){
+            arrayOfCols.sort( 
+                function(a, b){
+                    let dateA=a.textContent.slice(6,8)*365+a.textContent.slice(3,5)*31+a.textContent.slice(0,2);
+                    let dateB=b.textContent.slice(6,8)*365+b.textContent.slice(3,5)*31+b.textContent.slice(0,2);
+
+                    if (dateA < dateB) 
+                    return -1
+                    if (dateA > dateB)
+                    return 1
+                    return 0 
+                    }
+            
+            );
+            directionOfSort = 1;
+
+        }else{
+            arrayOfCols.sort( 
+                function(a, b){
+                    let dateA=a.textContent.slice(6,8)*365+a.textContent.slice(3,5)*31+a.textContent.slice(0,2);
+                    let dateB=b.textContent.slice(6,8)*365+b.textContent.slice(3,5)*31+b.textContent.slice(0,2);
+
+                    if (dateB < dateA) 
+                    return -1
+                    if (dateB > dateA)
+                    return 1
+                    return 0 
+                    }
+            );
+            directionOfSort = 0;
+  
+        }
+    }
+
+    //сортировать таблицу по дате после загрудки страницы
+    window.addEventListener("load",sortDate);
+
 }
 
+
+//подсчет общей сумму в таблице
+
+if(document.location.pathname == '/expenses.html' || document.location.pathname == '/income.html' || document.location.pathname == '/balance.html'){
+    window.addEventListener("load",makeTotalSum);
+
+    function makeTotalSum (){
+        let arrayOfSum = document.querySelectorAll ('.expense-table__col.expense-table__col_sum');
+        const arrayOfCurren = document.querySelectorAll ('.expense-table__col.expense-table__col_curren');
+        
+        let sumRUB=0;
+        let sumUSD=0;
+        let sumEUR=0;
+        
+
+        let countSumInCol = function (arrayOfSum){
+            sumRUB=0;
+            sumUSD=0;
+            sumEUR=0;
+
+            for (let i=0; i<arrayOfSum.length-1 ;i++){
+                if(arrayOfCurren[i].textContent == '₽'){
+                    sumRUB += +arrayOfSum[i].textContent;
+                }
+    
+                if(arrayOfCurren[i].textContent == '$'){
+                    sumUSD += +arrayOfSum[i].textContent;
+                }
+    
+                if(arrayOfCurren[i].textContent == '€'){
+                    sumEUR += +arrayOfSum[i].textContent;
+                }
+    
+            }
+        };
+
+        countSumInCol (arrayOfSum);
+        
+
+        arrayOfSum[arrayOfSum.length-1].innerHTML = `${sumRUB} <br> ${sumUSD} <br> ${sumEUR}`;
+
+        if (document.location.pathname == '/balance.html'){
+           
+            arrayOfSum = document.querySelectorAll ('.expense-table__col.balance-table__col_expenses');
+            countSumInCol (arrayOfSum);
+            arrayOfSum[arrayOfSum.length-1].innerHTML = `${sumRUB} <br> ${sumUSD} <br> ${sumEUR}`;
+            
+            arrayOfSum = document.querySelectorAll ('.expense-table__col.balance-table__col_balance');
+            countSumInCol (arrayOfSum);
+            arrayOfSum[arrayOfSum.length-1].innerHTML = `${sumRUB} <br> ${sumUSD} <br> ${sumEUR}`;
+        }
+
+        
+    }
+
+    
+
+    //Обновление обшей суммы в таблице при добавлении новых строк
+    let enterBtn = document.querySelector('.add-expenses__enter');
+    enterBtn.addEventListener('click',makeTotalSum);
+
+
+}
 
 
