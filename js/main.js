@@ -56,6 +56,11 @@ function showdate(){
             +event.target.value.slice(2,4); 
 
         checkInterval (displayFrom.textContent , displayTo.textContent);
+
+        if (document.location.pathname == '/expenses.html' || document.location.pathname == '/income.html'){
+            setFullPeriod ();
+        }
+        
     }
 
 
@@ -78,6 +83,21 @@ function showdate(){
     }
 
 }           
+
+
+// Установка интервала даты в футере таблицы
+if (document.location.pathname == '/expenses.html' || document.location.pathname == '/income.html'){
+    window.addEventListener("load",setFullPeriod);
+}
+
+function setFullPeriod (){
+    const dateStart = document.querySelector('.date-interval__display.date-interval__fromTime-display').textContent;
+    const dateEnd = document.querySelector('.date-interval__display.date-interval__toTime-display').textContent;
+
+    let fullPeriodRow = document.querySelector('.expense-table__col.expense-table__col_full-period');
+    fullPeriodRow.innerHTML = `${dateStart} <br> ${dateEnd}`;
+}
+
 
 //Проверка верно указанного интервала
 
@@ -123,7 +143,6 @@ if (document.location.pathname != '/desk.html'){
 
     changeTypeOfForm ();
 }
-
 
 
 
@@ -535,5 +554,6 @@ if(document.location.pathname == '/expenses.html' || document.location.pathname 
 
 
 }
+
 
 
