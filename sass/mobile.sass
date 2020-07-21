@@ -74,13 +74,14 @@
     line-height: $smallFontSize
 
   &__error
+    display: none;
     font-size: $smallFontSize  
     line-height: $smallFontSize
     color: $errorFontColor
     text-align: center
     margin-top: 5px
-    margin-bottom: 10px
     
+
   &__enter,
   &__registration
     height: 40px
@@ -96,6 +97,9 @@
     padding: 0 20px 0 20px
     cursor: pointer
     background-color: $buttonColor
+
+  &__enter
+    margin-top: 10px  
     
   &__enter:hover,
   &__registration:hover

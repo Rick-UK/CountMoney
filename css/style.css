@@ -96,12 +96,12 @@ body {
     font-size: 16px;
     line-height: 16px; }
   .enter-form__error {
+    display: none;
     font-size: 16px;
     line-height: 16px;
     color: #e62121;
     text-align: center;
-    margin-top: 5px;
-    margin-bottom: 10px; }
+    margin-top: 5px; }
   .enter-form__enter, .enter-form__registration {
     height: 40px;
     min-width: 120px;
@@ -116,6 +116,8 @@ body {
     padding: 0 20px 0 20px;
     cursor: pointer;
     background-color: #ffffff; }
+  .enter-form__enter {
+    margin-top: 10px; }
   .enter-form__enter:hover, .enter-form__registration:hover {
     background-color: #cccccc; }
   .enter-form__enter:focus, .enter-form__registration:focus {
