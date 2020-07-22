@@ -18,7 +18,6 @@ function initialization () {
 }
 
 function doRegistration (){
-    console.log(localStorage);
     let login = loginInput.value;
     let password = passwordInput.value;
 
@@ -27,23 +26,30 @@ function doRegistration (){
         for (let key of keys){
             if (key == login){
                 //console.log('Пользователь уже существует');
-                let error = document.querySelector('.enter-form__error');
+                let error = document.querySelector('.enter-form__error.enter-form__registration-done');
+                error.style.display = 'none';
+
+                error = document.querySelector('.enter-form__error.enter-form__enter-error');
+                error.style.display = 'none';
+
+                error = document.querySelector('.enter-form__error.enter-form__registration-error');
                 error.style.display = 'block';
-                setTimeout(() => {
-                    error.style.display = 'none';
-                }, 10000);
+                
                 return;
             }
         }
         
         localStorage.setItem(login,password);
-        let error = document.querySelector('.enter-form__error');
+        
+        let error = document.querySelector('.enter-form__error.enter-form__enter-error');
         error.style.display = 'none';
+
+        error = document.querySelector('.enter-form__error.enter-form__registration-error');
+        error.style.display = 'none';
+
         let registrationDone = document.querySelector('.enter-form__error.enter-form__registration-done');
         registrationDone.style.display = 'block';
-        setTimeout(() => {
-            registrationDone.style.display = 'none';
-        }, 10000);
+        
         //console.log('Зареган');
         return;
 
