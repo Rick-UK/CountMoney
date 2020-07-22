@@ -556,4 +556,34 @@ if(document.location.pathname == '/expenses.html' || document.location.pathname 
 }
 
 
+// Есть пользоваетль авторизован, указываем его имя в шапке сайта
+window.addEventListener("load",isUserRegistered);
+
+function isUserRegistered (){
+    if (!localStorage.getItem('activeUser')) return;
+
+    const userName = document.querySelector('.header__title');
+    
+    let page = 'Главная: ';
+
+    switch (document.location.pathname) {
+        case '/desk.html':
+            page = 'Главная: ';
+            break;
+
+        case '/expenses.html':
+            page = 'Расход: ';
+            break;    
+    
+        case '/income.html':
+            page = 'Доход: ';
+            break;
+    
+        case '/balance.html':
+            page = 'Сальдо: ';
+            break; 
+    }
+
+    userName.textContent = page+ localStorage.getItem('activeUser');
+}
 
